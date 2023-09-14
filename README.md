@@ -75,16 +75,16 @@ discord server. See contact options in theClubhou.se about section.
 
 To get started with this repository, follow these steps:
 
-1. Fork the repository into your own GitHub.
-2. Clone the repository to your local machine:
+### 1. Fork the repository into your own GitHub.
+### 2. Clone the repository to your local machine:
  ```console
 git clone https://github.com/your_username/project-euler.git
 ```
-3. Install all necessary dependencies for the script:
+### 3. Install all necessary dependencies for the script:
 ```console
 npm install 
 ```
-4. Run this command to set up the directory for whatever Euler command
+### 4. Run this command to set up the directory for whatever Euler command
 you are trying to solve. This command will create a directory for you 
 and a `README.md` file for your solution.
 ```console
@@ -93,6 +93,6 @@ npm run euler 1 javascript
 The above command will create all the correct folders inside 
 `eulers/e1/javascript/blister` and will create a `README.md` file for you
 to write about your solution.
-5. When you are happy with your solution, submit a Pull Request to the 
+### 5. When you are happy with your solution, submit a Pull Request to the 
 primary GitHub repository for [theClubhouse-Augusta](theClubhouse-Augusta/project-euler)
 
