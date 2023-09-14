@@ -75,22 +75,24 @@ discord server. See contact options in theClubhou.se about section.
 
 To get started with this repository, follow these steps:
 
-1. Fork the repository into your own GitHub.
-2. Clone the repository to your local machine:
- ```bash
- git clone https://github.com/your_username/project-euler.git
+### 1. Fork the repository into your own GitHub.
+### 2. Clone the repository to your local machine:
+ ```console
+git clone https://github.com/your_username/project-euler.git
 ```
-3. Navigate to the `eulers/` folder and then to the `e#` folder. Each `e#` 
-folder inside the `eulers/` folder will assocate to the numbered Project
-Euler problem. As an example, `eulers/e1` associates to the Project Euler
-problem [Multiples of 3 or 5](https://projecteuler.net/problem=1).
-4. If there is an existing "language" subfolder for the language you are going
-to use to solve this problem, navigate into that directory. If one does not
-exist, create one. As an example, if you want to solve `e1` with Javascript,
-the folder that should exist is `eulers/e1/javascript`. Inside **that** folder,
-create a folder with your Github username.
-5. My full solution folder for Project Euler problem 1 would be: 
-`eulers/e1/javascript/blister`
-6. When you are happy with your solution, submit a Pull Request to the 
+### 3. Install all necessary dependencies for the script:
+```console
+npm install 
+```
+### 4. Run this command to set up the directory for whatever Euler command
+you are trying to solve. This command will create a directory for you 
+and a `README.md` file for your solution.
+```console
+npm run euler 1 javascript
+```
+The above command will create all the correct folders inside 
+`eulers/e1/javascript/blister` and will create a `README.md` file for you
+to write about your solution.
+### 5. When you are happy with your solution, submit a Pull Request to the 
 primary GitHub repository for [theClubhouse-Augusta](theClubhouse-Augusta/project-euler)
 
