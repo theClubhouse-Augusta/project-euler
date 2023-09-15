@@ -33,7 +33,6 @@ We welcome individuals from diverse backgrounds and skill levels to join
 our community. Whether you're a student looking to learn or an experienced 
 professional seeking collaboration, theClubhou.se provides a welcoming space 
 for tech enthusiasts.
-
 - **Connect:** Join our online forums and social media channels to connect 
 with like-minded individuals, ask questions, and share your knowledge. See 
 Contact Us section.
@@ -65,7 +64,7 @@ knowledge.
 
 In this repository, you'll find solutions to Project Euler problems 
 implemented in different programming languages. Each problem is solved in its 
-own directory, organized by problem number. Inside each E directory are 
+own directory, organized by problem number. Inside each e directory are 
 subdirectories of the different languages that have been used to solve the 
 problems. You can explore and learn from various programming approaches used to 
 solve these problems. Feel welcome to reach out or discuss in theClubhou.se 
@@ -88,16 +87,12 @@ git clone https://github.com/your_username/project-euler.git
 npm install 
 ```
 ### Solve an Euler
-Run this command to set up the directory for whatever Euler command
-you are trying to solve. This command will create a directory for you 
-and a `README.md` file for your solution.
+Run this command to set up the directory for whatever Euler problem
+you are trying to solve. This command will create all the correct folders 
+for you and a `README.md` file for you to write about your solution.
 ```console
 npm run euler 1 javascript
 ```
-The above command will create all the correct folders inside 
-`eulers/e1/javascript/blister` and will create a `README.md` file for you
-to write about your solution.
 ### Submit PR to theClubhouse-Augusta/project-euler
 When you are happy with your solution, submit a Pull Request to the 
 primary GitHub repository for [theClubhouse-Augusta](theClubhouse-Augusta/project-euler)
-
