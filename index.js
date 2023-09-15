@@ -3,8 +3,6 @@ const {execSync} = require('child_process');
 const {NodeHtmlMarkdown} = require('node-html-markdown');
 const fetch = require('node-fetch');
 
-md.use(mk);
-
 function get_git_username() {
 	try {
 		const git_remote = execSync('git remote -v').toString();
@@ -21,6 +19,18 @@ function get_git_username() {
 	
 	// should be unreachable
 	return false;
+}
+
+function finish_euler(euler_short_path) {
+	console.log(`Euler ready! ${euler_short_path}`);
+	console.log('Have fun!');
+}
+
+async function get_euler_markdown(problem) {
+	const resp = await fetch(`https://projecteuler.net/minimal=${problem}`);
+	const out  = await resp.text();
+	const markdown = NodeHtmlMarkdown.translate(out);
+	return markdown;
 }
 
 const username = get_git_username();
@@ -55,25 +65,29 @@ if ( ! fs.existsSync(euler_path) ) {
 if ( ! fs.existsSync(`${euler_path}/README.md`) ) {
 	console.log(`    Creating ${euler_short_path}/README.md...`);
 	// do nothing
-	const resp = await fetch(`https://projecteuler.net/minimal=${problem}`);
-	const out  = await resp.text();
-	const markdown = NodeHtmlMarkdown.translate(out);
+	const resp = fetch(`https://projecteuler.net/minimal=${problem}`)
+		.then(data => data.text())
+		.then(html => {
+			const markdown = NodeHtmlMarkdown.translate(html);
 
-	const content = `
+			const content = `
 # ${username}'s Euler Solution ${problem} [${language}
 This is the solution for @${username}. 
 
 ## Problem Description
 ${markdown}
 `;
-	try {
-		fs.writeFileSync(`${euler_short_path}/README.md`, content);
-	} catch(e) {
-		console.error('Error: Unable to create README.md');
-		console.error(e);
-		process.exit(0);
-	}
+			try {
+				fs.writeFileSync(`${euler_short_path}/README.md`, content);
+			} catch(e) {
+				console.error('Error: Unable to create README.md');
+				console.error(e);
+				process.exit(0);
+			}
+
+			finish_euler(euler_short_path);
+		});
+} else {
+	finish_euler(euler_short_path);
 }
 
-console.log(`Euler ready! ${euler_short_path}`);
-console.log('Have fun!');
