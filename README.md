@@ -1,5 +1,5 @@
 # theClubhou.se Project Euler
-![Project Euler Logo](https://projecteuler.net/themes/logo_default.png) ![theClubhou.se Logo](https://images.squarespace-cdn.com/content/v1/5c66b728fb22a56617031035/1550235775738-29BE1V7V5KO6WFRFECK5/logo-theclubhouse-rgb.png)
+![Project Euler Logo](https://projecteuler.net/themes/logo_default.png)
 Welcome to theClubhou.se Project Euler repository! This project is dedicated 
 to solving Project Euler problems using various programming languages. If you 
 enjoy mathematical and algorithmic challenges, you're in the right place.
