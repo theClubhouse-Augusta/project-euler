@@ -6,7 +6,7 @@
   },
   "scripts": {
     "euler": "node index.js",
-    "beuler": "bun index.js"
+	"sync": "node sync_problems.js" 
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
