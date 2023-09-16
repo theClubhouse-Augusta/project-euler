@@ -96,3 +96,14 @@ npm run euler 1 javascript
 ### Submit PR to theClubhouse-Augusta/project-euler
 When you are happy with your solution, submit a Pull Request to the 
 primary GitHub repository for [theClubhouse-Augusta](theClubhouse-Augusta/project-euler)
+
+### Administrative
+If you ever need to "resync" our local list of problems with Project Euler,
+you can run the command listed below to pull down the most recent list of 
+problems.
+```console
+npm run sync
+```
+This command will fetch the full list of problems from 
+https://projecteuler.net/minimal=problems and store them as a JSON object in
+`problems.js`.

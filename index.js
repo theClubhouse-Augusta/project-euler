@@ -1,11 +1,11 @@
-const fs = require('fs');
-const {execSync} = require('child_process');
+const fs                 = require('fs');
+const {execSync}         = require('child_process');
 const {NodeHtmlMarkdown} = require('node-html-markdown');
-const fetch = require('node-fetch');
-const create_readme = require('./create_readme');
+const fetch              = require('node-fetch');
 
-function get_problem_content() {
-}
+// tool-specific helpers
+const create_readme = require('./create_readme');
+const problems      = require('./problems');
 
 function get_git_username() {
 	try {
@@ -44,14 +44,18 @@ process.argv.shift(); // node|bun
 process.argv.shift(); // index.js
 
 const problem = parseInt(process.argv.shift().replace(/^\D+/g, '')); // number
-if ( ! problem || (problem < 0) || (problem > 844) ) {
+if ( ! problem || ! (problem in problems) ) {
 	console.log('Error:');
-	console.log(`   Expected ${problem} to be a number between 0-844.`);
+	console.log(`   Expected ${problem} to be a valid Euler problem ID.`);
 	process.exit(0);
 }
 
+const safename    = problems[problem].replaceAll(' ','-')
+	.replaceAll('$','')
+	.toLowerCase();
+
 const language = process.argv.shift().toLowerCase();
-const problem_path = `eulers/e${problem}`;
+const problem_path = `eulers/e${problem}-${safename}`;
 const language_path = `${problem_path}/${language}`;
 const user_path = `${language_path}/${username}`;
 
@@ -74,6 +78,69 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			fs.mkdirSync(`${__dirname}/${user_path}`, { recursive: true });
 		}
 
+		const submissions = {
+			problems  : {},
+			solutions : {},
+			languages : {},
+			users     : {},
+		};
+		submissions.problems = fs
+			.readdirSync(`${__dirname}/eulers/`, {
+				withFileTypes: true,
+			})
+			.filter(dirent => dirent.isDirectory())
+			.map(dir => { 
+				const problem = parseInt(dir.name.split('-')[0].replace('e',''));
+				return {
+					problem: problem,
+					folder: dir.name,
+					dir: `${dir.path}${dir.name}`,
+				}
+			});
+		for ( let i = 0; i < submissions.problems.length; ++i ) {
+			const prob  = submissions.problems[i];
+			const langs = fs.readdirSync(`${prob.dir}`, { withFileTypes: true })
+				.filter(dir => dir.isDirectory())
+				.map(dir => {
+					if ( dir.name in submissions.languages ) {
+						submissions.languages[dir.name].count++;
+					} else {
+						submissions.languages[dir.name] = { count: 1, max: null, max_user: null};
+					}
+					return { language: dir.name, dir: `${dir.path}/${dir.name}` };
+				});
+
+			for ( let l = 0; l < langs.length; ++l ) {
+				const solves = fs.readdirSync(langs[l].dir, { withFileTypes: true })
+					.filter(dir => dir.isDirectory())
+					.map(dir => {
+						if ( dir.name in submissions.users ) {
+							submissions.users[dir.name].count++;
+							if ( langs[l].language in submissions.users[dir.name].languages ) {
+								submissions.users[dir.name].languages[langs[l].language]++;
+							} else {
+								submissions.users[dir.name].languages[langs[l].language] = 1;
+							}
+						} else {
+							submissions.users[dir.name] = {
+								count: 1,
+								languages: {},
+							};
+							submissions.users[dir.name].languages[langs[l].language] = 1;
+						}
+					});
+			}
+			for ( const username in submissions.users ) {
+				const user = submissions.users[username];
+				for ( let lang in user.languages ) {
+					if ( user.languages[lang] > submissions.languages[lang].max ) {
+						submissions.languages[lang].max      = user.languages[lang];
+						submissions.languages[lang].max_user = username;
+					}
+				}
+			}
+		}
+
 		const languages = fs
 			.readdirSync(`${__dirname}/${problem_path}`, { withFileTypes: true })
 			.filter(dirent => dirent.isDirectory())
@@ -88,6 +155,10 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 				.map(dirent => dirent.name);
 			language_users[ languages[i] ] = users;
 		}
+
+		const leaderboard_content = create_readme('leaderboard', {
+			submissions: submissions,
+		});
 
 		const problem_content = create_readme('problem', {
 			problem: problem,
@@ -104,6 +175,8 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 
 		// write e README
 		try {
+			fs.writeFileSync(`${__dirname}/eulers/README.md`, leaderboard_content);
+			console.log(`     Updating Leaderboard: ./eulers/README.md`);
 			fs.writeFileSync(`${__dirname}/${problem_path}/README.md`, problem_content);
 			console.log(`     Updating ./${problem_path}/README.md...`);
 			fs.writeFileSync(`${__dirname}/${language_path}/README.md`, language_content);
