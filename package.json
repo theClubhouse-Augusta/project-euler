@@ -9,7 +9,8 @@
     "set_environment": "node scripts/set_environment.js",
     "euler": "node index.js",
     "eulers/": "node index.js",
-    "sync": "node scripts/sync_problems.js"
+    "sync": "node scripts/sync_problems.js",
+    "usage": "node scripts/usage_leaderboard.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"

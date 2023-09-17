@@ -1,7 +1,22 @@
 const fs = require('fs');
+const c  = require('ansi-colors');
 
 // tool specific modules
 const create_readme = require('../core/create_readme');
+const setup = require('../core/setup');
+
+// don't enter setup, just check to see if we have a username
+const { username, initialize_at_one } = setup(true); 
+
+if ( username ) {
+	console.log(`Hello ${username}, writing the leaderboard for you...`);
+	write_leaderboard(username);
+} else {
+	console.log(`You haven't contributed to any solutions yet and don't`);
+	console.log(`have a username on file. Please run:\n`);
+	console.log(`    ${c.yellow.bold('npm run setup')}`);
+	process.exit(0);
+}
 
 function write_leaderboard(username) {
 	const submissions = {
@@ -10,8 +25,9 @@ function write_leaderboard(username) {
 		languages : {},
 		users     : {},
 	};
+	const euler_path = __dirname.replace('/scripts','/');
 	submissions.problems = fs
-		.readdirSync(`${__dirname}/eulers/`, {
+		.readdirSync(`${euler_path}/eulers/`, {
 			withFileTypes: true,
 		})
 		.filter(dirent => dirent.isDirectory())
@@ -67,25 +83,10 @@ function write_leaderboard(username) {
 		}
 	}
 
-	const languages = fs
-		.readdirSync(`${__dirname}/${problem_path}`, { withFileTypes: true })
-		.filter(dirent => dirent.isDirectory())
-		.map(dirent => dirent.name);
-
-	const language_users = {};
-	for ( let i = 0; i < languages.length; ++i ) {
-		const lang_path = `${__dirname}/${problem_path}/${languages[i]}`;
-		const users = fs
-			.readdirSync(lang_path, { withFileTypes: true })
-			.filter(dirent => dirent.isDirectory())
-			.map(dirent => dirent.name);
-		language_users[ languages[i] ] = users;
-	}
-
 	const leaderboard_content = create_readme('usage_leaderboard', {
 		submissions: submissions,
 	});
 
-	fs.writeFileSync(`${__dirname}/eulers/LEADERBOARD.md`, leaderboard_content);
-	console.log(`     Updating LEADERBOARD: ./eulers/LEADERBOARD.md`);
+	fs.writeFileSync(`${euler_path}/eulers/LEADERBOARD.md`, leaderboard_content);
+	console.log(`     Updating LEADERBOARD: ${c.green.bold('./eulers/LEADERBOARD.md')}`);
 }
