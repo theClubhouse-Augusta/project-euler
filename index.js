@@ -73,7 +73,7 @@ if ( ! problem ) {
 if ( ! language ) {
 	let loop = true;
 	while ( loop ) {
-		const which_env = readlineSync.question(`What language or environment will you be using? [${c.gray('"[q]uit" to exit')}]\n${c.yellow('> ')}`).trim();
+		const which_env = readlineSync.question(`What language or environment will you be using? [${c.white('"[q]uit" to exit')}]\n${c.yellow('> ')}`).trim();
 		if ( which_env.toLowerCase() === 'quit' ) {
 			loop = false;
 			process.exit(0);
@@ -84,7 +84,7 @@ if ( ! language ) {
 		}
 	}
 } else if ( ! lang_from_args ) {
-	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.gray('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
+	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.white('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
 	if ( which_env === 'quit' || which_env === 'q' ) {
 		process.exit(0);
 	} else if ( which_env === 'default' || which_env === 'd' || which_env === '' ) {
@@ -101,6 +101,7 @@ if ( username.includes('"') || username.includes("'") ) {
 	console.log('Why are there quotes? Removing them.', username.replaceAll('"', '').replaceAll("'",''));
 	username = username.replaceAll('"','').replaceAll("'",'');	
 }
+
 const problem_path = `eulers/e${problem}-${safename}`;
 const language_path = `${problem_path}/${language}`;
 const user_path = `${language_path}/${username}`;
