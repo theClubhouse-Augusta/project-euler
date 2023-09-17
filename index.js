@@ -37,9 +37,10 @@ try {
 } catch(_e) { 
 	language = null;
 }
-
+console.log(language);
 // env/lang provided?
 let lang_from_args = false;
+console.log('len',process.argv.length, process.argv);
 if ( process.argv.length ) {
 	language = process.argv.shift().trim();
 	lang_from_args = true;
