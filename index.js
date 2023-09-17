@@ -12,7 +12,7 @@ const create_readme = require('./core/create_readme');
 const problems      = require('./core/problems');
 
 // fun interactive setup
-const { username, initialize_at_one } = setup();
+let { username, initialize_at_one } = setup();
 
 let problem  = null;
 
@@ -33,14 +33,15 @@ if ( process.argv.length === 1 && process.argv[0].includes('help') ) {
 
 let language = null;
 try {
-	language = execSync('git config --get user.defaultenv').toString().trim();
+	language = execSync('git config --get user.defaultenv').toString().trim().replaceAll("'",'').replaceAll('"','');
 } catch(_e) { 
 	language = null;
 }
-
 // env/lang provided?
+let lang_from_args = false;
 if ( process.argv.length ) {
-	language = process.argv.shift();
+	language = process.argv.shift().trim();
+	lang_from_args = true;
 }
 
 if ( initialize_at_one && ! problem ) {
@@ -71,7 +72,7 @@ if ( ! problem ) {
 if ( ! language ) {
 	let loop = true;
 	while ( loop ) {
-		const which_env = readlineSync.question(`What language or environment will you be using? [${c.gray('"[q]uit" to exit')}]\n${c.yellow('> ')}`).trim();
+		const which_env = readlineSync.question(`What language or environment will you be using? [${c.white('"[q]uit" to exit')}]\n${c.yellow('> ')}`).trim();
 		if ( which_env.toLowerCase() === 'quit' ) {
 			loop = false;
 			process.exit(0);
@@ -81,8 +82,8 @@ if ( ! language ) {
 			language = which_env.toLowerCase();
 		}
 	}
-} else {
-	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.gray('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
+} else if ( ! lang_from_args ) {
+	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.white('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
 	if ( which_env === 'quit' || which_env === 'q' ) {
 		process.exit(0);
 	} else if ( which_env === 'default' || which_env === 'd' || which_env === '' ) {
@@ -93,6 +94,10 @@ if ( ! language ) {
 const safename    = problems[problem].replaceAll(' ','-')
 	.replaceAll('$','')
 	.toLowerCase();
+
+if ( username.includes('"') || username.includes("'") ) {
+	username = username.replaceAll('"','').replaceAll("'",'');	
+}
 
 const problem_path = `eulers/e${problem}-${safename}`;
 const language_path = `${problem_path}/${language}`;
