@@ -7,16 +7,12 @@ const c                  = require('ansi-colors');
 
 // tool-specific helpers
 const setup         = require('./core/setup');
+const finish_euler  = require('./core/finish');
 const create_readme = require('./core/create_readme');
 const problems      = require('./core/problems');
 
 // fun interactive setup
 const { username, initialize_at_one } = setup();
-
-function finish_euler(euler_short_path) {
-	console.log(`Euler ready! ${euler_short_path}`);
-	console.log(`\nRun this: ${c.yellow.bold(`cd ${user_path}`)} and ${c.cyan.bold.underline('HAVE FUN!')}`);
-}
 
 let problem  = null;
 
@@ -75,7 +71,7 @@ if ( ! problem ) {
 if ( ! language ) {
 	let loop = true;
 	while ( loop ) {
-		const which_env = readlineSync.question(`What language or environment will you be using? [${c.gray('quit to exit')}]\n${c.yellow('> ')}`).trim();
+		const which_env = readlineSync.question(`What language or environment will you be using? [${c.gray('"[q]uit" to exit')}]\n${c.yellow('> ')}`).trim();
 		if ( which_env.toLowerCase() === 'quit' ) {
 			loop = false;
 			process.exit(0);
@@ -84,6 +80,13 @@ if ( ! language ) {
 			loop = false;
 			language = which_env.toLowerCase();
 		}
+	}
+} else {
+	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.gray('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
+	if ( which_env === 'quit' || which_env === 'q' ) {
+		process.exit(0);
+	} else if ( which_env === 'default' || which_env === 'd' || which_env === '' ) {
+		console.log(`    Using default (${c.cyan(language)}).`);
 	}
 }
 
@@ -118,7 +121,6 @@ if ( create_branch ) {
 		process.exit(0);
 	}
 }
-
 
 fetch(`https://projecteuler.net/minimal=${problem}`)
 	.then(data => data.text())
@@ -211,8 +213,8 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 				process.exit(0);
 			}
 
-			finish_euler(`./${user_path}`);
+			finish_euler(problem, problems[problem], markdown, `./${user_path}`);
 		} else {
-			finish_euler(`./${user_path}`);
+			finish_euler(problem, problems[problem], markdown, `./${user_path}`);
 		}
 }); // end of "fetch" to retrieve the content from projecteuler.net
