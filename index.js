@@ -2,62 +2,136 @@ const fs                 = require('fs');
 const {execSync}         = require('child_process');
 const {NodeHtmlMarkdown} = require('node-html-markdown');
 const fetch              = require('node-fetch');
+const readlineSync       = require('readline-sync');
+const c                  = require('ansi-colors');
 
 // tool-specific helpers
+const setup         = require('./setup');
 const create_readme = require('./create_readme');
 const problems      = require('./problems');
 
-function get_git_username() {
-	try {
-		const git_remote = execSync('git remote -v').toString();
-		const gh_regex = /github.com(\:|\/)((\w+))\/project-euler/gi;
-		const remote = git_remote.match(gh_regex);
-		const git_path = remote[1].replace('github.com:','').replace('github.com/','');
-		const username = git_path.split('/')[0];
-		return username;
-	} catch(e) {
-		console.error('Error grabbing Github username from `git remote -v`');
-		console.error(e);
-		process.exit(0);
-	}
-	
-	// should be unreachable
-	return false;
+async function gh_user_info(username) {
+	const info = await user_info(username);
+	console.log(info);
+	return info;
 }
+
+const { username, initialize_at_one } = setup();
 
 function finish_euler(euler_short_path) {
 	console.log(`Euler ready! ${euler_short_path}`);
 	console.log('Have fun!');
 }
 
-const username = get_git_username();
-console.log('Username is:', username);
-
-if ( process.argv.length < 4 ) {
-	console.log('Usage: ');
-	console.log('    bun run euler $EULER_PROBLEM $LANGUAGE');
-	console.log('    node run euler $EULER_PROBLEM $LANGUAGE');
-	process.exit(0);
-}
+let problem  = null;
 
 process.argv.shift(); // node|bun
 process.argv.shift(); // index.js
 
-const problem = parseInt(process.argv.shift().replace(/^\D+/g, '')); // number
-if ( ! problem || ! (problem in problems) ) {
-	console.log('Error:');
-	console.log(`   Expected ${problem} to be a valid Euler problem ID.`);
+if ( process.argv.length === 1 && process.argv[0].includes('help') ) {
+	console.log('Usage: ');
+	console.log('    bun index.js EULER_PROBLEM ENVIRONMENT_or_LANGUAGE');
+	console.log('    npm run euler EULER_PROBLEM ENVIRONMENT_or_LANGUAGE');
 	process.exit(0);
+} else if (process.argv.length >= 1) {
+	const problem_arg = parseInt(process.argv.shift().replace(/^\D+/g,'')); // force int
+	if ( problem_arg && problem_arg in problems ) {
+		problem = problem_arg;
+	}
+}
+
+let language = null;
+try {
+	language = execSync('git config --get user.defaultenv').toString();
+} catch(_e) { 
+	language = null;
+}
+
+// env/lang provided?
+if ( process.argv.length ) {
+	language = process.argv.shift();
+}
+
+if ( initialize_at_one && ! problem ) {
+	problem = 1;
+}
+
+if ( ! problem ) {
+	let loop = true;
+	while ( loop ) {
+		const which_problem = readlineSync.question('Enter a Project Euler problem # you want to solve: ');
+		if ( which_problem.includes('q') ) {
+			loop = false;
+			process.exit(0);
+		} 
+		const num = parseInt(which_problem);
+		if ( isNaN(num) ) {
+			loop = false;
+			process.exit(0);
+		} else if ( num in problems ) {
+			loop = false;
+			problem = num;
+		} else {
+			console.log(`${c.bold('Invalid problem number')}. Please enter a number between ${c.bold('1')} and ${c.bold(Object.keys(problems).length)}.`)
+		}
+	}
+}
+
+if ( ! language ) {
+	let loop = true;
+	while ( loop ) {
+		const which_env = readlineSync.question(`What language or environment will you be using? [${c.gray('quit to exit')}]\n${c.yellow('> ')}`).trim();
+		if ( which_env.toLowerCase() === 'quit' ) {
+			loop = false;
+			process.exit(0);
+		} 
+		if ( which_env.length ) {
+			loop = false;
+			language = which_env.toLowerCase();
+		}
+	}
 }
 
 const safename    = problems[problem].replaceAll(' ','-')
 	.replaceAll('$','')
 	.toLowerCase();
 
-const language = process.argv.shift().toLowerCase();
 const problem_path = `eulers/e${problem}-${safename}`;
 const language_path = `${problem_path}/${language}`;
 const user_path = `${language_path}/${username}`;
+
+// create a new branch
+let create_branch = false;
+try {
+	const git_checkout = execSync(`git checkout ${problem}-${username}-${language}`).toString().trim();
+	if ( git_checkout.includes(`Switched to branch '${problem}-${username}-${language}'`) ) {
+		console.log(`Switched to branch '${c.bold.yellow(`${problem}-${username}-${language}`)}`);
+	} 
+	if ( git_checkout != `Switched to a new branch '${problem}-${username}-${language}'` ) {
+		console.error('ERROR: Could not create new git branch.');
+		console.log(git_checkout);
+		process.exit(0);
+	}
+} catch(e) {
+	if ( e.toString().includes(`${problem}-${username}-${language}' did not match`) ) {
+		create_branch = true;
+	}
+}
+
+if ( create_branch ) {
+	try {
+		const git_checkout = execSync(`git checkout -b ${problem}-${username}-${language}`).toString().trim();
+		if ( git_checkout != `Switched to a new branch '${problem}-${username}-${language}'` ) {
+			console.error(`${c.red('ERROR')}: Could not create new git branch.`);
+			console.log(git_checkout);
+			process.exit(0);
+		}
+	} catch(e) {
+		console.error(`${c.red('ERROR')}: Unknown git error.`);
+		console.log(e);
+		process.exit(0);
+	}
+}
 
 fetch(`https://projecteuler.net/minimal=${problem}`)
 	.then(data => data.text())
@@ -183,7 +257,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			console.log(`     Updating ./${language_path}/README.md...`);
 		} catch(e) {
 			console.error(e);
-			console.error('Error: Unable to create Euler/Language READMEs');
+			console.error('ERROR: Unable to create Euler/Language READMEs');
 			process.exit(0);
 		}
 
@@ -194,7 +268,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			try {
 				fs.writeFileSync(`${__dirname}/${user_path}/README.md`, user_content);
 			} catch(e) {
-				console.error('Error: Unable to create README.md');
+				console.error('ERROR: Unable to create README.md');
 				console.error(e);
 				process.exit(0);
 			}
