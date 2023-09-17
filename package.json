@@ -1,6 +1,8 @@
 {
   "name": "project-euler",
-  "module": "index.js",
+  "main": "index.js",
+  "version": "1.0.0",
+  "license": "BSD-3",
   "devDependencies": {
     "bun-types": "latest"
   },
