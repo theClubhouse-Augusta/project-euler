@@ -12,7 +12,7 @@ const create_readme = require('./core/create_readme');
 const problems      = require('./core/problems');
 
 // fun interactive setup
-const { username, initialize_at_one } = setup();
+let { username, initialize_at_one } = setup();
 
 let problem  = null;
 
@@ -39,8 +39,10 @@ try {
 }
 
 // env/lang provided?
+let lang_from_args = false;
 if ( process.argv.length ) {
-	language = process.argv.shift();
+	language = process.argv.shift().trim();
+	lang_from_args = true;
 }
 
 if ( initialize_at_one && ! problem ) {
@@ -81,7 +83,7 @@ if ( ! language ) {
 			language = which_env.toLowerCase();
 		}
 	}
-} else {
+} else if ( ! lang_from_args ) {
 	const which_env = readlineSync.question(`What language or environment will you be using? [default=${c.cyan(language)}, ${c.gray('[q]uit to exit')}]\n${c.yellow('> ')}`).trim();
 	if ( which_env === 'quit' || which_env === 'q' ) {
 		process.exit(0);
@@ -94,6 +96,11 @@ const safename    = problems[problem].replaceAll(' ','-')
 	.replaceAll('$','')
 	.toLowerCase();
 
+console.log(`YOUR USERNAME IS "${username}" (without quotes)`);
+if ( username.includes('"') || username.includes("'") ) {
+	console.log('Why are there quotes? Removing them.', username.replaceAll('"', '').replaceAll("'",''));
+	username = username.replaceAll('"','').replaceAll("'",'');	
+}
 const problem_path = `eulers/e${problem}-${safename}`;
 const language_path = `${problem_path}/${language}`;
 const user_path = `${language_path}/${username}`;
