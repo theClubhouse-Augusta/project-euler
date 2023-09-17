@@ -14,7 +14,7 @@ fetch(`https://projecteuler.net/minimal=problems`)
 				problems[sections[0]] = sections[1];
 			}
 		}
-
-		fs.writeFileSync(`problems.js`, `module.exports = ${JSON.stringify(problems,null,'\t')};`);
+		const core_path = __dirname.replace('/scripts/', '/core/');
+		fs.writeFileSync(`${core_path}/problems.js`, `module.exports = ${JSON.stringify(problems,null,'\t')};`);
 		console.log(`Wrote ${Object.keys(problems).pop()} problems to problems.js`);
 	});

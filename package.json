@@ -5,15 +5,21 @@
     "bun-types": "latest"
   },
   "scripts": {
+    "setup": "git config --global --unset user.github && node index.js",
+    "set_environment": "node scripts/set_environment.js",
     "euler": "node index.js",
-	"sync": "node sync_problems.js" 
+    "eulers/": "node index.js",
+    "sync": "node scripts/sync_problems.js",
+    "usage": "node scripts/usage_leaderboard.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "ansi-colors": "^4.1.3",
     "katex": "^0.16.8",
     "node-fetch": "^2.7.0",
-    "node-html-markdown": "^1.3.0"
+    "node-html-markdown": "^1.3.0",
+    "readline-sync": "^1.4.10"
   }
 }
