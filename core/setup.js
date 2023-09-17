@@ -7,7 +7,7 @@ function setup(just_check = false) {
 	let username = null;
 
 	try {
-		username = execSync('git config --get user.github').toString().trim();
+		username = execSync('git config --get user.github').toString().trim().replaceAll("'",'').replaceAll('"','');
 	} catch(_e) { 
 		if ( just_check ) {
 			return { username: false, initialize_at_one: false };

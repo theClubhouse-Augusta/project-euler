@@ -33,7 +33,7 @@ if ( process.argv.length === 1 && process.argv[0].includes('help') ) {
 
 let language = null;
 try {
-	language = execSync('git config --get user.defaultenv').toString().trim();
+	language = execSync('git config --get user.defaultenv').toString().trim().replaceAll("'",'').replaceAll('"','');
 } catch(_e) { 
 	language = null;
 }
