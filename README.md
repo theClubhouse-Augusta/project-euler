@@ -105,7 +105,7 @@ function and ask you a few questions about your preferences.
 ```console
 npm run euler
 ```
-![image](https://github.com/theClubhouse-Augusta/project-euler/assets/124588/7a06281b-69f2-424d-8945-138259145f8f
+![image](https://github.com/theClubhouse-Augusta/project-euler/assets/124588/7a06281b-69f2-424d-8945-138259145f8f)
 
 ### 5. Code Your Solution
 Start a new Project Euler solution by running the command `npm run euler` 
