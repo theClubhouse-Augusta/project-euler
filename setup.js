@@ -50,7 +50,7 @@ function setup() {
 			console.log('\nOk. If you want to set a default environment in the future,');
 			console.log(`run the command ${c.bold('npm run set_environment')}`);
 		} else {
-			const defaultenv = readlineSync.question(`What default environment would you like? ${c.gray('[ex: javascript, csharp, arduino, react]')}\n${c.yellow('> ')}`).replaceAll(' ','').toLowerCase();
+			const defaultenv = readlineSync.question(`What default environment would you like? ${c.gray('[ex: javascript, csharp, arduino, react]')}\n${c.yellow('> ')}`).replaceAll(' ','').toLowerCase().trim();
 			const errors = execSync(`git config --global user.defaultenv '${defaultenv}'`).toString();
 			if ( errors ) {
 				console.error(`${c.red.bold('ERROR')}: Could not set user.defaultenv config value.`);

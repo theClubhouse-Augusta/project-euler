@@ -10,12 +10,7 @@ const setup         = require('./setup');
 const create_readme = require('./create_readme');
 const problems      = require('./problems');
 
-async function gh_user_info(username) {
-	const info = await user_info(username);
-	console.log(info);
-	return info;
-}
-
+// fun interactive setup
 const { username, initialize_at_one } = setup();
 
 function finish_euler(euler_short_path) {
@@ -42,7 +37,7 @@ if ( process.argv.length === 1 && process.argv[0].includes('help') ) {
 
 let language = null;
 try {
-	language = execSync('git config --get user.defaultenv').toString();
+	language = execSync('git config --get user.defaultenv').toString().trim();
 } catch(_e) { 
 	language = null;
 }
@@ -107,11 +102,6 @@ try {
 	if ( git_checkout.includes(`Switched to branch '${problem}-${username}-${language}'`) ) {
 		console.log(`Switched to branch '${c.bold.yellow(`${problem}-${username}-${language}`)}`);
 	} 
-	if ( git_checkout != `Switched to a new branch '${problem}-${username}-${language}'` ) {
-		console.error('ERROR: Could not create new git branch.');
-		console.log(git_checkout);
-		process.exit(0);
-	}
 } catch(e) {
 	if ( e.toString().includes(`${problem}-${username}-${language}' did not match`) ) {
 		create_branch = true;
@@ -121,6 +111,7 @@ try {
 if ( create_branch ) {
 	try {
 		const git_checkout = execSync(`git checkout -b ${problem}-${username}-${language}`).toString().trim();
+		console.log(`"${git_checkout}"`);
 		if ( git_checkout != `Switched to a new branch '${problem}-${username}-${language}'` ) {
 			console.error(`${c.red('ERROR')}: Could not create new git branch.`);
 			console.log(git_checkout);
