@@ -105,15 +105,20 @@ function and ask you a few questions about your preferences.
 ```console
 npm run euler
 ```
-**SCREENSHOT GOES HERE**
-When you run `npm run euler` without any additional arguments, the script
-will ask you what Project Euler problem you're going to solve.
+![image](https://github.com/theClubhouse-Augusta/project-euler/assets/124588/7a06281b-69f2-424d-8945-138259145f8f
 
 ### 5. Code Your Solution
-The `npm run euler` script will tell you where your files should be stored.
-`cd` into the directory to code your solution. In the **Fork Method**, all 
-of your contributions will be added to **YOUR** GitHub forked copy of the 
-repository. 
+Start a new Project Euler solution by running the command `npm run euler` 
+or `node index.js`. This script will create all of the correct files and 
+folders, and will create a README file in your solution directory.
+
+You can also provide command-line arguments to the script to skip 
+interactive mode and have the script perform the tasks automatically.
+#### Examples
+```console
+npm run euler 5 javascript
+node index.js 9 cpp
+```
 
 ### 6. Submit PR
 Once you're happy with your solution, submit a PR to the main repository
