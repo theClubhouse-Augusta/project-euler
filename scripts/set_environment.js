@@ -24,6 +24,6 @@ if ( set_default.includes('n') ) {
 	}
 	console.log('\nSweet! If you want to change your default environment in the future,');
 	console.log(`run the command ${c.bold('npm run set_environment')}.`);
-	console.log(`\nYour default environment is ${c.bold(defaultenv)}.`)
+	console.log(`\nYour default environment is ${c.yellow.bold(defaultenv)}.`)
 	console.log(c.gray('You can always override this default by including an environment\nwhen you run the euler command.'));
 }

@@ -2,13 +2,16 @@ const readlineSync = require('readline-sync');
 const { execSync } = require('child_process');
 const c            = require('ansi-colors');
 
-function setup() {
+function setup(just_check = false) {
 	let initialize_at_one = false;
 	let username = null;
 
 	try {
 		username = execSync('git config --get user.github').toString().trim();
 	} catch(_e) { 
+		if ( just_check ) {
+			return { username: false, initialize_at_one: false };
+		}
 		console.log(c.cyan('####################################'));
 		console.log(c.cyan.bold('### theClubhou.se Project Euler ###'));
 		console.log(c.cyan('####################################'));

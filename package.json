@@ -5,11 +5,11 @@
     "bun-types": "latest"
   },
   "scripts": {
-	"setup": "git config --global --unset user.github && node index.js",
-	"set_environment": "node set_environment.js",
+    "setup": "git config --global --unset user.github && node index.js",
+    "set_environment": "node scripts/set_environment.js",
     "euler": "node index.js",
     "eulers/": "node index.js",
-    "sync": "node sync_problems.js"
+    "sync": "node scripts/sync_problems.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
@@ -19,7 +19,6 @@
     "katex": "^0.16.8",
     "node-fetch": "^2.7.0",
     "node-html-markdown": "^1.3.0",
-    "octocat": "^1.2.1",
     "readline-sync": "^1.4.10"
   }
 }

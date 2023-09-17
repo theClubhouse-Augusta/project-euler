@@ -6,16 +6,16 @@ const readlineSync       = require('readline-sync');
 const c                  = require('ansi-colors');
 
 // tool-specific helpers
-const setup         = require('./setup');
-const create_readme = require('./create_readme');
-const problems      = require('./problems');
+const setup         = require('./core/setup');
+const create_readme = require('./core/create_readme');
+const problems      = require('./core/problems');
 
 // fun interactive setup
 const { username, initialize_at_one } = setup();
 
 function finish_euler(euler_short_path) {
 	console.log(`Euler ready! ${euler_short_path}`);
-	console.log('Have fun!');
+	console.log(`\nRun this: ${c.yellow.bold(`cd ${user_path}`)} and ${c.cyan.bold.underline('HAVE FUN!')}`);
 }
 
 let problem  = null;
@@ -109,20 +109,16 @@ try {
 }
 
 if ( create_branch ) {
+	console.log('---- CREATE BRANCH ----');
 	try {
-		const git_checkout = execSync(`git checkout -b ${problem}-${username}-${language}`).toString().trim();
-		console.log(`"${git_checkout}"`);
-		if ( git_checkout != `Switched to a new branch '${problem}-${username}-${language}'` ) {
-			console.error(`${c.red('ERROR')}: Could not create new git branch.`);
-			console.log(git_checkout);
-			process.exit(0);
-		}
+		const git_checkout_new = execSync(`git checkout -b ${problem}-${username}-${language}`).toString().trim();
 	} catch(e) {
 		console.error(`${c.red('ERROR')}: Unknown git error.`);
 		console.log(e);
 		process.exit(0);
 	}
 }
+
 
 fetch(`https://projecteuler.net/minimal=${problem}`)
 	.then(data => data.text())
@@ -143,13 +139,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			fs.mkdirSync(`${__dirname}/${user_path}`, { recursive: true });
 		}
 
-		const submissions = {
-			problems  : {},
-			solutions : {},
-			languages : {},
-			users     : {},
-		};
-		submissions.problems = fs
+		const submissions = fs
 			.readdirSync(`${__dirname}/eulers/`, {
 				withFileTypes: true,
 			})
@@ -162,49 +152,6 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 					dir: `${dir.path}${dir.name}`,
 				}
 			});
-		for ( let i = 0; i < submissions.problems.length; ++i ) {
-			const prob  = submissions.problems[i];
-			const langs = fs.readdirSync(`${prob.dir}`, { withFileTypes: true })
-				.filter(dir => dir.isDirectory())
-				.map(dir => {
-					if ( dir.name in submissions.languages ) {
-						submissions.languages[dir.name].count++;
-					} else {
-						submissions.languages[dir.name] = { count: 1, max: null, max_user: null};
-					}
-					return { language: dir.name, dir: `${dir.path}/${dir.name}` };
-				});
-
-			for ( let l = 0; l < langs.length; ++l ) {
-				const solves = fs.readdirSync(langs[l].dir, { withFileTypes: true })
-					.filter(dir => dir.isDirectory())
-					.map(dir => {
-						if ( dir.name in submissions.users ) {
-							submissions.users[dir.name].count++;
-							if ( langs[l].language in submissions.users[dir.name].languages ) {
-								submissions.users[dir.name].languages[langs[l].language]++;
-							} else {
-								submissions.users[dir.name].languages[langs[l].language] = 1;
-							}
-						} else {
-							submissions.users[dir.name] = {
-								count: 1,
-								languages: {},
-							};
-							submissions.users[dir.name].languages[langs[l].language] = 1;
-						}
-					});
-			}
-			for ( const username in submissions.users ) {
-				const user = submissions.users[username];
-				for ( let lang in user.languages ) {
-					if ( user.languages[lang] > submissions.languages[lang].max ) {
-						submissions.languages[lang].max      = user.languages[lang];
-						submissions.languages[lang].max_user = username;
-					}
-				}
-			}
-		}
 
 		const languages = fs
 			.readdirSync(`${__dirname}/${problem_path}`, { withFileTypes: true })
@@ -221,7 +168,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			language_users[ languages[i] ] = users;
 		}
 
-		const leaderboard_content = create_readme('leaderboard', {
+		const readme_content = create_readme('euler_readme', {
 			submissions: submissions,
 		});
 
@@ -240,8 +187,8 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 
 		// write e README
 		try {
-			fs.writeFileSync(`${__dirname}/eulers/README.md`, leaderboard_content);
-			console.log(`     Updating Leaderboard: ./eulers/README.md`);
+			fs.writeFileSync(`${__dirname}/eulers/README.md`, readme_content);
+			console.log(`     Updating README: ./eulers/README.md`);
 			fs.writeFileSync(`${__dirname}/${problem_path}/README.md`, problem_content);
 			console.log(`     Updating ./${problem_path}/README.md...`);
 			fs.writeFileSync(`${__dirname}/${language_path}/README.md`, language_content);
