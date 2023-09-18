@@ -138,7 +138,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 			language: language,
 			markdown: markdown
 		});
-	
+		
 		// now that we have our euler content,
 		// finish processing the folders
 		if ( ! fs.existsSync(`${__dirname}/${user_path}`) ) {
@@ -209,7 +209,6 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 		// write language README
 		if ( ! fs.existsSync(`${__dirname}/${user_path}/README.md`) ) {
 			console.log(`    Creating ./${user_path}/README.md...`);
-			// do nothing
 			try {
 				fs.writeFileSync(`${__dirname}/${user_path}/README.md`, user_content);
 			} catch(e) {
