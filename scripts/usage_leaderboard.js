@@ -17,7 +17,6 @@ if ( username ) {
 	console.log(`    ${c.yellow.bold('npm run setup')}`);
 	process.exit(0);
 }
-
 function write_leaderboard(username) {
 	const submissions = {
 		problems  : {},
@@ -25,7 +24,9 @@ function write_leaderboard(username) {
 		languages : {},
 		users     : {},
 	};
-	const euler_path = __dirname.replace('/scripts','/');
+	const pathparts = __dirname.split('\\');
+	pathparts.pop();
+	const euler_path = pathparts.join('/');
 	submissions.problems = fs
 		.readdirSync(`${euler_path}/eulers/`, {
 			withFileTypes: true,

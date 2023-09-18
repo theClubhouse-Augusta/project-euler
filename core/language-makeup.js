@@ -32,7 +32,7 @@ const extensions = {
     '.pl': 'Perl',             // Perl source code
     '.pm': 'Perl',             // Perl module
     '.ts': 'TypeScript',       // TypeScript source code
-    '.cs': 'Csharp',               // C# source code
+    '.cs': 'Csharp',           // C# source code
     '.scala': 'Scala',         // Scala source code
     '.hs': 'Haskell',          // Haskell source code
     '.lua': 'Lua',             // Lua source code
@@ -56,19 +56,21 @@ function computeEulersFolder() {
     
     try {
         metrics = tryGetFolderContents(folderPath, metrics);
-        const totalFileCount = metrics.reduce((accumulator, item) => {
-            return accumulator + item.fileCount - 1;
+        metrics[0].totalLangCount = metrics.length - 1;
+        metrics[0].totalFileCount = metrics.reduce((accumulator, item) => {
+            return accumulator + item.fileCount;
         }, 0);
-        metrics[0].totalLangCount = metrics.length;
-        metrics[0].totalFileCount = totalFileCount;
         metrics.sort((a, b) => b.fileCount - a.fileCount);
-        console.log(`${'Metrics dictionary:'.fg('red').bg('black').clearAll()}`);
         console.log(metrics);
         
-        console.log("# of files per language used to solve Euler problems,");
-        console.log("      + the users who used that language and how many times they used it:");
+        console.log(`!!THERE HAVE BEEN ${metrics[metrics.length - 1].eulerCount} EULER PROBLEMS SOLVED IN ${metrics.length - 1} DIFFERENT LANGUAGES!!`);
+        console.log("!!CAN YOU COMPLETE A EULER IN A NEW LANGUAGE?!!");
+        console.log();
+        console.log("    Below: # of files per language used to solve Euler problems,");
+        console.log("           + the users who used that language and how many times they used it:");
+        console.log();
         for (let i = 0; i < metrics.length - 1; ++i) {
-            console.log(`${metrics[i].fileCount} ${metrics[i].lang} files from users: ${metrics[i].users}`);
+            console.log(`${metrics[i].fileCount} ${metrics[i].lang} files - users: ${metrics[i].users}`);
         }
         
     } catch (err) {
@@ -119,9 +121,8 @@ function tryGetFolderContents(folderPath, metrics) {
     return metrics;
 }
 
-// module.exports = {
-//     computeSolutionLanguages,
-//     printLangMakeup
-// }
+module.exports = {
+    computeEulersFolder,
+}
 
 computeEulersFolder();
