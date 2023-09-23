@@ -65,8 +65,8 @@ function computeEulersFolder() {
 
 		console.log(c.cyan(`!!!THERE HAVE BEEN ${c.yellow.bold(`${metrics[metrics.length - 1].eulerCount}`)} EULER PROBLEMS SOLVED IN ${c.yellow.bold(`${metrics.length - 1}`)} DIFFERENT LANGUAGES!!!`));
 		console.log(c.cyan(`  ??? CAN YOU COMPLETE A EULER IN A ${c.yellow.bold('NEW LANGUAGE')} ???`));
-		console.log(c.blue("	Below:	# of files per language used to solve Euler problems,"));
-		console.log(c.blue("			+ users who used that language and how many times they used it"));
+		console.log(c.blue("    Below:  # of files per language used to solve Euler problems,"));
+		console.log(c.blue("            + users who used that language + how many times they used it"));
 		console.log();
 
 		for (let i = 0; i < metrics.length - 1; ++i) {
@@ -82,19 +82,16 @@ function tryGetFolderContents(folderPath, metrics) {
 	const folderContents = fs.readdirSync(folderPath);
 
 	folderContents.forEach((item) => {
-		if (path.basename(folderPath).toLowerCase().startsWith('e') && !isNaN(parseInt(path.basename(folderPath)[1]))) {
-			metrics[0].eulerCount++;
-		}
 		const itemPath = path.join(folderPath, item);
 
+		if (path.basename(itemPath).toLowerCase().startsWith('e') && !isNaN(parseInt(path.basename(itemPath)[1])))
+			metrics[0].eulerCount++; //count euler folders
 		if (fs.statSync(itemPath).isDirectory()) {
 			tryGetFolderContents(itemPath, metrics);
 		} else {
 			const fileExtension = path.extname(itemPath).toLowerCase();
-			// if we're in posix, use `/`, in win32, use `\\`.
-			// dirty hack, perhaps, but easier (for now) than correctly parsing the 
-			// path
-			const pathPieces = itemPath.includes('/') ? itemPath.split('/') : itemPath.split('\\');
+			// should work for posix and win32
+			const pathPieces = itemPath.split(path.sep);
 			const username = pathPieces[pathPieces.length - 2];
 
 			if (extensions[fileExtension]) {

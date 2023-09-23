@@ -52,8 +52,8 @@ module.exports = (problem, title, description, euler_short_path) => {
 	console.log(`\nRun this:\n    ${c.yellow.bold(`cd ${euler_short_path}`)}`);
 	console.log('-------------------------------------------------------------------------\n');
 	console.log(c.blue.bold('#########################################################################'));
-	console.log(c.blue.bold('#                                                                     #'));
- 	console.log(c.blue.bold(`#                             ${c.yellowBright.bold.underline('HAVE FUN!')}                               #`));
-	console.log(c.blue.bold('#                                                                     #'));
+	console.log(c.blue.bold('#                                                                       #'));
+ 	console.log(c.blue.bold(`#                             ${c.yellowBright.bold.underline('HAVE FUN!')}                                 #`));
+	console.log(c.blue.bold('#                                                                       #'));
 	console.log(c.blue.bold('#########################################################################\n'));
 };
