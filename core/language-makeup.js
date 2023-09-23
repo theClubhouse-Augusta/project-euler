@@ -1,4 +1,5 @@
-﻿//computes percentages of languages based on file types
+﻿//computes makeup of languages used to solve eulers
+//based on file type
 //called by index.js
 
 require('ansi-colors');
@@ -44,7 +45,7 @@ const extensions = {
 };
 
 function computeEulersFolder() {
-    const folderPath = `${__dirname}/eulers`;
+    const folderPath = path.resolve(__dirname, '..', 'eulers');
     let metrics = [{
         eulerCount: 0,
         langFileCount: 0,
@@ -61,7 +62,6 @@ function computeEulersFolder() {
             return accumulator + item.fileCount;
         }, 0);
         metrics.sort((a, b) => b.fileCount - a.fileCount);
-        console.log(metrics);
         
         console.log(`!!THERE HAVE BEEN ${metrics[metrics.length - 1].eulerCount} EULER PROBLEMS SOLVED IN ${metrics.length - 1} DIFFERENT LANGUAGES!!`);
         console.log("!!CAN YOU COMPLETE A EULER IN A NEW LANGUAGE?!!");
@@ -124,5 +124,3 @@ function tryGetFolderContents(folderPath, metrics) {
 module.exports = {
     computeEulersFolder,
 }
-
-computeEulersFolder();
