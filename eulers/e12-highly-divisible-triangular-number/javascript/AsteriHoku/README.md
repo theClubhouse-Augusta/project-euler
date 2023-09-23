@@ -16,3 +16,19 @@ Let us list the factors of the first seven triangle numbers:
 We can see that $28$ is the first triangle number to have over five divisors.
 
 What is the value of the first triangle number to have over five hundred divisors?
+
+## Write up from writer:
+
+So for triNum 78:
+
+factor pairs:
+1 - 78
+2 - 39
+3 - 26
+6 - 13
+
+1st loop: i = 2 max = 39
+2nd: i = 3 max = 26
+3rd i = 6 max = 13
+
+This is how it's so fast, it still has to compute all the divisors, but it shrinks the search area very dramatically

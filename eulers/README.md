@@ -14,8 +14,8 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Summation of Primes
 - [ ] Largest Product in a Grid
 - [x] [Highly Divisible Triangular Number](./e12-highly-divisible-triangular-number/)
-- [ ] Large Sum
-- [ ] Longest Collatz Sequence
+- [x] [Large Sum](./e13-large-sum/)
+- [x] [Longest Collatz Sequence](./e14-longest-collatz-sequence/)
 - [x] [Lattice Paths](./e15-lattice-paths/)
 - [x] [Power Digit Sum](./e16-power-digit-sum/)
 - [x] [Number Letter Counts](./e17-number-letter-counts/)
