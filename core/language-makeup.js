@@ -91,7 +91,10 @@ function tryGetFolderContents(folderPath, metrics) {
             tryGetFolderContents(itemPath, metrics);
         } else {
             const fileExtension = path.extname(itemPath).toLowerCase();
-            const pathPieces = itemPath.split('\\');
+			// if we're in posix, use `/`, in win32, use `\\`.
+			// dirty hack, perhaps, but easier (for now) than correctly parsing the 
+			// path
+            const pathPieces = itemPath.includes('/') ? itemPath.split('/') : itemPath.split('\\');
             const username = pathPieces[pathPieces.length - 2];
 
             if (extensions[fileExtension]) {
