@@ -63,18 +63,11 @@ function computeEulersFolder() {
         }, 0);
         metrics.sort((a, b) => b.fileCount - a.fileCount);
 
-        // console.log(c.blue('this is a bold red message'));
-        // console.log(c.bold.yellow('this is a bold yellow italicized message'));
-        // console.log(c.green.bold('this is a bold green underlined message'));
-        //
-        // console.log(c.yellow(`foo ${c.red.bold('red')} bar ${c.cyan('cyan')} baz`));
-
         console.log(c.cyan(`!!!THERE HAVE BEEN ${c.yellow.bold(`${metrics[metrics.length - 1].eulerCount}`)} EULER PROBLEMS SOLVED IN ${c.yellow.bold(`${metrics.length - 1}`)} DIFFERENT LANGUAGES!!!`));
         console.log(c.cyan(`  ??? CAN YOU COMPLETE A EULER IN A ${c.yellow.bold('NEW LANGUAGE')} ???`));
         console.log(c.blue("    Below:  # of files per language used to solve Euler problems,"));
         console.log(c.blue("            + users who used that language and how many times they used it"));
         console.log();
-        // console.log(c.yellow(`foo ${c.red.bold('red')} bar ${c.cyan('cyan')} baz`));
 
         for (let i = 0; i < metrics.length - 1; ++i) {
             console.log(c.yellow(`${metrics[i].fileCount} ${c.cyan(`${metrics[i].lang} files -`)} ${c.blue(' users:')} ${c.green(`${metrics[i].users}`)}`));
