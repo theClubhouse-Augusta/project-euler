@@ -45,13 +45,13 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Pandigital Prime
 - [ ] Coded Triangle Numbers
 - [ ] Sub-string Divisibility
-- [x] [Pentagon Numbers](./e44-pentagon-numbers/)
+- [ ] Pentagon Numbers
 - [ ] Triangular, Pentagonal, and Hexagonal
 - [ ] Goldbach's Other Conjecture
 - [ ] Distinct Primes Factors
 - [ ] Self Powers
 - [ ] Prime Permutations
-- [x] [Consecutive Prime Sum](./e50-consecutive-prime-sum/)
+- [ ] Consecutive Prime Sum
 - [ ] Prime Digit Replacements
 - [ ] Permuted Multiples
 - [ ] Combinatoric Selections
@@ -61,7 +61,7 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Square Root Convergents
 - [ ] Spiral Primes
 - [ ] XOR Decryption
-- [x] [Prime Pair Sets](./e60-prime-pair-sets/)
+- [ ] Prime Pair Sets
 - [ ] Cyclical Figurate Numbers
 - [ ] Cubic Permutations
 - [ ] Powerful Digit Counts

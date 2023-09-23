@@ -27,4 +27,5 @@ factor pairs:
 2nd: i = 3 max = 26
 3rd i = 6 max = 13
 
-This is how it's so fast, it still has to compute all the divisors, but it shrinks the search area very dramatically
+This is how it's so fast, it still has to compute all the divisors, 
+but it shrinks the search area very dramatically

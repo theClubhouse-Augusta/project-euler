@@ -1,4 +1,4 @@
-﻿
+
 # javascript Solutions for 3. Largest Prime Factor
 ## Problem Description
 The prime factors of $13195$ are $5, 7, 13$ and $29$.
