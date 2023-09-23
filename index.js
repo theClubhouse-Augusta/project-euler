@@ -196,7 +196,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 		// write e README
 		try {
 			fs.writeFileSync(`${__dirname}/eulers/README.md`, readme_content);
-			console.log(`     Updating README: ./eulers/README.md`);
+			console.log(`     Updating project-euler README: ./eulers/README.md...`);
 			fs.writeFileSync(`${__dirname}/${problem_path}/README.md`, problem_content);
 			console.log(`     Updating ./${problem_path}/README.md...`);
 			fs.writeFileSync(`${__dirname}/${language_path}/README.md`, language_content);
