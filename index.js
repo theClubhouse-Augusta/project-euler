@@ -9,6 +9,7 @@ const c                  = require('ansi-colors');
 const setup         = require('./core/setup');
 const finish_euler  = require('./core/finish');
 const create_readme = require('./core/create_readme');
+const lang_makeup = require('./core/language-makeup');
 const problems      = require('./core/problems');
 
 // fun interactive setup
@@ -106,7 +107,7 @@ const user_path = `${language_path}/${username}`;
 // create a new branch
 let create_branch = false;
 try {
-	const git_checkout = execSync(`git checkout ${problem}-${username}-${language}`).toString().trim();
+	const git_checkout = execSync(`git checkout ${problem}-${username}-${language}`, {stdio:'pipe'}).toString().trim();
 	if ( git_checkout.includes(`Switched to branch '${problem}-${username}-${language}'`) ) {
 		console.log(`Switched to branch '${c.bold.yellow(`${problem}-${username}-${language}`)}`);
 	} 
@@ -142,7 +143,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 		// now that we have our euler content,
 		// finish processing the folders
 		if ( ! fs.existsSync(`${__dirname}/${user_path}`) ) {
-			console.log(`    Making ./${user_path}...`);
+			console.log(`    Creating ./${user_path}...`);
 			fs.mkdirSync(`${__dirname}/${user_path}`, { recursive: true });
 		}
 
@@ -195,7 +196,7 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 		// write e README
 		try {
 			fs.writeFileSync(`${__dirname}/eulers/README.md`, readme_content);
-			console.log(`     Updating README: ./eulers/README.md`);
+			console.log(`     Updating project-euler README: ./eulers/README.md...`);
 			fs.writeFileSync(`${__dirname}/${problem_path}/README.md`, problem_content);
 			console.log(`     Updating ./${problem_path}/README.md...`);
 			fs.writeFileSync(`${__dirname}/${language_path}/README.md`, language_content);
@@ -221,4 +222,5 @@ fetch(`https://projecteuler.net/minimal=${problem}`)
 		} else {
 			finish_euler(problem, problems[problem], markdown, `./${user_path}`);
 		}
+		lang_makeup.computeEulersFolder();
 }); // end of "fetch" to retrieve the content from projecteuler.net
