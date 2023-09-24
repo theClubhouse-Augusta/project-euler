@@ -1,6 +1,7 @@
 # Welcome to theClubhou.se Project Euler Solutions Listing
 ## Leaderboard
 The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
+//todo sarah add top 3 here
 ## Solutions
 - [ ] Multiples of $3$ or $5$
 - [ ] Even Fibonacci Numbers
@@ -41,7 +42,7 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Truncatable Primes
 - [ ] Pandigital Multiples
 - [ ] Integer Right Triangles
-- [ ] Champernowne's Constant
+- [x] [Champernowne's Constant](./e40-champernowne's-constant/)
 - [ ] Pandigital Prime
 - [ ] Coded Triangle Numbers
 - [ ] Sub-string Divisibility
@@ -856,3 +857,6 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Coins in a Box
 - [ ] Pisano Periods 1
 - [ ] Pisano Periods 2
+
+//todo sarah add Languages overview here
+//with a link to a full file

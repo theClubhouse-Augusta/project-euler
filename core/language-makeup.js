@@ -5,44 +5,7 @@
 const c = require('ansi-colors');
 const fs = require('fs');
 const path = require('path');
-const extensions = {
-	'.c': 'C',				   // C source code
-	'.h': 'C',				   // C header file
-	'.cpp': 'C++',			   // C++ source code
-	'.cc': 'C++',			   // C++ source code
-	'.cxx': 'C++',			   // C++ source code
-	'.java': 'Java',		   // Java source code
-	'.class': 'Java',		   // Java compiled bytecode
-	'.jar': 'Java',			   // Java executable archive
-	'.py': 'Python',		   // Python source code
-	'.pyw': 'Python',		   // Python GUI application
-	'.js': 'JavaScript',	   // JavaScript source code
-	'.json': 'JSON',		   // JSON data file
-	'.html': 'HTML',		   // HTML markup
-	'.htm': 'HTML',			   // HTML markup
-	'.css': 'CSS',			   // CSS stylesheet
-	'.php': 'PHP',			   // PHP source code
-	'.rb': 'Ruby',			   // Ruby source code
-	'.swift': 'Swift',		   // Swift source code
-	'.go': 'Go',			   // Go source code
-	'.R': 'R',				   // R source code
-	'.r': 'R',				   // R source code
-	'.sql': 'SQL',			   // SQL script
-	'.kt': 'Kotlin',		   // Kotlin source code
-	'.rs': 'Rust',			   // Rust source code
-	'.pl': 'Perl',			   // Perl source code
-	'.pm': 'Perl',			   // Perl module
-	'.ts': 'TypeScript',	   // TypeScript source code
-	'.cs': 'Csharp',		   // C# source code
-	'.scala': 'Scala',		   // Scala source code
-	'.hs': 'Haskell',		   // Haskell source code
-	'.lua': 'Lua',			   // Lua source code
-	'.dart': 'Dart',		   // Dart source code
-	'.m': 'Objective-C',	   // Objective-C source code
-	'.sh': 'Shell',			   // Shell script
-	'.bat': 'Batch',		   // Batch script
-	'.ps1': 'Powershell'	   // PowerShell script
-};
+const extensions = require('./language-extensions');
 
 function computeEulersFolder() {
 	const folderPath = `${path.resolve(__dirname, '..')}/eulers`;
@@ -62,6 +25,8 @@ function computeEulersFolder() {
 			return accumulator + item.fileCount;
 		}, 0);
 		metrics.sort((a, b) => b.fileCount - a.fileCount);
+		//todo sarah can use metrics?
+		//maybe just create code to add here and run separately myself with `node language-makeup.js`
 
 		console.log(c.cyan(`!!!THERE HAVE BEEN ${c.yellow.bold(`${metrics[metrics.length - 1].eulerCount}`)} EULER PROBLEMS SOLVED IN ${c.yellow.bold(`${metrics.length - 1}`)} DIFFERENT LANGUAGES!!!`));
 		console.log(c.cyan(`  ??? CAN YOU COMPLETE A EULER IN A ${c.yellow.bold('NEW LANGUAGE')} ???`));
@@ -120,7 +85,70 @@ function tryGetFolderContents(folderPath, metrics) {
 	});
 	return metrics;
 }
+//TODO SARAH
+//tie into leaderboard process so they can both run
+//combine metrics into leaderboard.md if wanted
+//NO NEED TO generate a LANGUAGES.md file with the metrics
+//make a .js file with a static dictionary language-stats.js that uses the same keys as langauge-extensions.js
+//create logic to traverse the eulers folder and compute the metrics to save in the language-stats.js dictionary
+//this will be overwriting the file each time so put safeguards in place
+//computed as a background job?
 
-module.exports = {
-	computeEulersFolder,
+function getUnusedLanguages(){
+	let langsUsed = [];
+	let langsNotUsedDict = {};
+	const folderPath = `${path.resolve(__dirname, '..')}/eulers`;
+
+	const keyValueArray = Object.entries(extensions);
+	
+	try {
+		langsUsed = getFolderLanguages(folderPath, langsUsed);
+		
+		// langsNotUsedDict = extensions.filter(lang => !langsUsed.includes(lang));
+		langsNotUsedDict = keyValueArray.filter(([key, value]) => !langsUsed.includes(key));
+		console.log(`Test - C# should be in used array: ${langsUsed.includes('C#|Smalltalk')}`);
+		console.log(`Test - C# should not be in unused dict: ${langsNotUsedDict['.cs'] === undefined}`);
+		console.log(`Test - JavaScript should be in used array: ${langsUsed.includes('JavaScript')}`);
+		console.log(`Test - JavaScript should not be in unused dict: ${langsNotUsedDict['.js'] === undefined}`);
+		console.log('----LANGS USED----');
+		console.log(langsUsed);
+		console.log('----LANGS UNUSED DICT----');
+		console.log(langsNotUsedDict);
+		//todo write dict to file
+		
+	} catch (err) {
+		console.error('Error:', err);
+	}
 }
+function getFolderLanguages(folderPath, langsUsed){
+	const folderContents = fs.readdirSync(folderPath);
+
+	folderContents.forEach((item) => {
+		const itemPath = path.join(folderPath, item);
+		
+		if (fs.statSync(itemPath).isDirectory()) {
+			getFolderLanguages(itemPath, langsUsed);
+		} else {
+			const fileExtension = path.extname(itemPath).toLowerCase();
+			// should work for posix and win32
+			const pathPieces = itemPath.split(path.sep);
+
+			if (extensions[fileExtension]) {
+				if (pathPieces[pathPieces.length - 4].toLowerCase().startsWith('e') && !isNaN(parseInt(pathPieces[pathPieces.length - 4][1]))) {
+					if (!langsUsed.includes(extensions[fileExtension]))
+						langsUsed.push(extensions[fileExtension]);
+				}
+			}
+		}
+	});
+	return langsUsed;
+}
+
+//
+// module.exports = {
+// 	computeEulersFolder,
+// }
+
+// computeEulersFolder()
+
+getUnusedLanguages()
