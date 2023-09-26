@@ -67,8 +67,8 @@
 	'.bmx': 'BlitzMax',     // programming
 	'.bsv': 'Bluespec',     // programming
 	'.boo': 'Boo',     // programming
-	'.b': 'Brainfuck',     // programming
-	'.bf': 'Brainfuck',     // programming
+	'.b': 'Brainfuck|Limbo',     // programming
+	'.bf': 'Brainfuck|HyPhy',     // programming
 	'.brs': 'Brightscript',     // programming
 	'.bro': 'Bro',     // programming
 	'.c': 'C',     // programming C source code
@@ -155,7 +155,7 @@
 	'.pyx': 'Cython',     // programming
 	'.pxd': 'Cython',     // programming
 	'.pxi': 'Cython',     // programming
-	'.d': 'D|DTrace',     // programming
+	'.d': 'D|DTrace|MakeFile',     // programming
 	'.di': 'D',     // programming
 	'.d-objdump': 'D-ObjDump',     // data
 	'.com': 'DIGITAL Command Language',     // programming
@@ -176,8 +176,8 @@
 	'.E': 'E',     // programming
 	'.ecl': 'ECL|ECLiPSe',     // programming
 	'.eclxml': 'ECL',     // programming
-	'.sch': 'Eagle',     // markup
-	'.brd': 'Eagle',     // markup
+	'.sch': 'Eagle|KiCad',     // markup
+	'.brd': 'Eagle|KiCad',     // markup
 	'.epj': 'Ecere Projects',     // data
 	'.e': 'Eiffel',     // programming
 	'.ex': 'Elixir',     // programming
@@ -189,7 +189,7 @@
 	'.em': 'EmberScript',     // programming
 	'.emberscript': 'EmberScript',     // programming
 	'.erl': 'Erlang',     // programming
-	'.es': 'Erlang',     // programming
+	'.es': 'Erlang|JavaScript',     // programming
 	'.escript': 'Erlang',     // programming
 	'.hrl': 'Erlang',     // programming
 	'.xrl': 'Erlang',     // programming
@@ -197,7 +197,7 @@
 	'.fs': 'F#|Filterscript|Forth|GLSL',     // programming
 	'.fsi': 'F#',     // programming
 	'.fsx': 'F#',     // programming
-	'.fx': 'FLUX',     // programming
+	'.fx': 'FLUX|HLSL',     // programming
 	'.flux': 'FLUX',     // programming
 	'.f90': 'FORTRAN',     // programming
 	'.f': 'FORTRAN|Forth',     // programming
@@ -218,19 +218,19 @@
 	'.fr': 'Forth|Frege',     // programming
 	'.frt': 'Forth',     // programming
 	'.ftl': 'FreeMarker',     // programming
-	'.g': 'G-code',     // data
+	'.g': 'G-code|GAP',     // data
 	'.gco': 'G-code',     // data
 	'.gcode': 'G-code',     // data
 	'.gms': 'GAMS',     // programming
 	'.gap': 'GAP',     // programming
-	'.gd': 'GAP',     // programming
+	'.gd': 'GAP|GDScript',     // programming
 	'.gi': 'GAP',     // programming
 	'.tst': 'Scilab|GAP',     // programming
 	'.s': 'GAS',     // programming
 	'.ms': 'GAS|Groff|Maxscript',     // programming
 	'.glsl': 'GLSL',     // programming
 	'.fp': 'GLSL',     // programming
-	'.frag': 'GLSL',     // programming
+	'.frag': 'GLSL|JavaScript',     // programming
 	'.frg': 'GLSL',     // programming
 	'.fsh': 'GLSL',     // programming
 	'.fshader': 'GLSL',     // programming
@@ -243,7 +243,7 @@
 	'.vrx': 'GLSL',     // programming
 	'.vsh': 'GLSL',     // programming
 	'.vshader': 'GLSL',     // programming
-	'.gml': 'Game Maker Language',     // programming
+	'.gml': 'GameMakerLanguage|GraphModelingLanguage',     // programming
 	'.kid': 'Genshi',     // programming
 	'.ebuild': 'Gentoo Ebuild',     // programming
 	'.eclass': 'Gentoo Eclass',     // programming
@@ -257,7 +257,7 @@
 	'.plt': 'Gnuplot',     // programming
 	'.go': 'Go',     // programming Go source code
 	'.golo': 'Golo',     // programming
-	'.gs': 'Gosu',     // programming
+	'.gs': 'Gosu|JavaScript',     // programming
 	'.gst': 'Gosu',     // programming
 	'.gsx': 'Gosu',     // programming
 	'.vark': 'Gosu',     // programming
@@ -415,7 +415,7 @@
 	'.lagda': 'Literate Agda',     // programming
 	'.litcoffee': 'Literate CoffeeScript',     // programming
 	'.lhs': 'Literate Haskell',     // programming
-	'.ls': 'LiveScript',     // programming
+	'.ls': 'LiveScript|LoomScript',     // programming
 	'._ls': 'LiveScript',     // programming
 	'.xm': 'Logos',     // programming
 	'.x': 'Logos',     // programming
@@ -898,32 +898,3 @@
 };
 
 module.exports = extensions;
-
-
-// ext .g already exists in dict for: G-code
-// failed to add: name GAP type programming
-// ext .gd already exists in dict for: GAP
-// failed to add: name GDScript type programming
-// ext .gml already exists in dict for: Game Maker Language
-// failed to add: name Graph Modeling Language type data
-// ext .fx already exists in dict for: FLUX
-// failed to add: name HLSL type programming
-// ext .bf already exists in dict for: Brainfuck
-// failed to add: name HyPhy type programming
-// ext .es already exists in dict for: Erlang
-// failed to add: name JavaScript type programming
-// ext .frag already exists in dict for: GLSL
-// failed to add: name JavaScript type programming
-// ext .gs already exists in dict for: Gosu
-// failed to add: name JavaScript type programming
-// ext .sch already exists in dict for: Eagle
-// failed to add: name KiCad type programming
-// ext .brd already exists in dict for: Eagle
-// failed to add: name KiCad type programming
-// ext .b already exists in dict for: Brainfuck
-// failed to add: name Limbo type programming
-// ext .ls already exists in dict for: LiveScript
-// failed to add: name LoomScript type programming
-
-// ext .d already exists in dict for: D
-// failed to add: name Makefile type programming
