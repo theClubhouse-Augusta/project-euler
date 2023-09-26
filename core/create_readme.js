@@ -82,6 +82,9 @@ ${markdown}
 `;
 		const clean = process_submissions(submissions);
 
+		// for (let i = 0; i < clean.leaderboard.length; ++i) {
+		// 	output += `${i}. @${clean.leaderboard[i]} **${clean.leaderboard[clean.leaderboard[i]]}** entries\n`;
+		// }
 		for ( const user in clean.leaderboard ) {
 			output += `1. @${user} **${clean.leaderboard[user]}** entries\n`;
 		}
@@ -91,7 +94,7 @@ ${markdown}
 		const languages = Object.keys(clean.languages)
 			.sort((a,b) => clean.languages[b].count - clean.languages[a].count);
 		for ( let i = 0; i < languages.length; ++i ) {
-			output += `1. **${languages[i]}** with **${clean.languages[languages[i]].count}** entries [leader: @${clean.languages[languages[i]].max_user} - ${clean.languages[languages[i]].max}]\n`;
+			output += `${i+1}. **${languages[i]}** with **${clean.languages[languages[i]].count}** entries [leader: @${clean.languages[languages[i]].max_user} - ${clean.languages[languages[i]].max}]\n`;
 		}
 		
 		return output;
@@ -102,6 +105,7 @@ ${markdown}
 		let output = '# Welcome to theClubhou.se Project Euler Solutions Listing\n';
 		output += '## Leaderboard\n';
 		output += 'The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).\n';
+		output += getTop3Leaders();
 		output += '## Solutions\n';
 		const solves = {};
 		for ( let i = 0; i < submissions.length; ++i ) {
@@ -140,6 +144,10 @@ function process_submissions(submissions) {
 	}
 
 	return processed;
+}
+
+function getTop3Leaders(){
+	return '';
 }
 		
 module.exports = create_readme;

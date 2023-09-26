@@ -88,9 +88,6 @@ function tryGetFolderContents(folderPath, metrics) {
 //TODO SARAH
 //tie into leaderboard process so they can both run
 //combine metrics into leaderboard.md if wanted
-//NO NEED TO generate a LANGUAGES.md file with the metrics
-//make a .js file with a static dictionary language-stats.js that uses the same keys as langauge-extensions.js
-//create logic to traverse the eulers folder and compute the metrics to save in the language-stats.js dictionary
 //this will be overwriting the file each time so put safeguards in place
 //computed as a background job?
 
