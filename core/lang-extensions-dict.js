@@ -15,7 +15,7 @@
 	'.asc': 'AGS Script|AsciiDoc',     // programming
 	'.ash': 'AGS Script',     // programming
 	'.ampl': 'AMPL',     // programming
-	'.mod': 'AMPL',     // programming
+	'.mod': 'AMPL|Modula-2|LinuxKernelModule',     // programming
 	'.g4': 'ANTLR',     // programming
 	'.apib': 'API Blueprint',     // markup
 	'.apl': 'APL',     // programming
@@ -155,7 +155,7 @@
 	'.pyx': 'Cython',     // programming
 	'.pxd': 'Cython',     // programming
 	'.pxi': 'Cython',     // programming
-	'.d': 'D',     // programming
+	'.d': 'D|DTrace',     // programming
 	'.di': 'D',     // programming
 	'.d-objdump': 'D-ObjDump',     // data
 	'.com': 'DIGITAL Command Language',     // programming
@@ -174,7 +174,7 @@
 	'.intr': 'Dylan',     // programming
 	'.lid': 'Dylan',     // programming
 	'.E': 'E',     // programming
-	'.ecl': 'ECL',     // programming
+	'.ecl': 'ECL|ECLiPSe',     // programming
 	'.eclxml': 'ECL',     // programming
 	'.sch': 'Eagle',     // markup
 	'.brd': 'Eagle',     // markup
@@ -194,18 +194,18 @@
 	'.hrl': 'Erlang',     // programming
 	'.xrl': 'Erlang',     // programming
 	'.yrl': 'Erlang',     // programming
-	'.fs': 'F#',     // programming
+	'.fs': 'F#|Filterscript|Forth|GLSL',     // programming
 	'.fsi': 'F#',     // programming
 	'.fsx': 'F#',     // programming
 	'.fx': 'FLUX',     // programming
 	'.flux': 'FLUX',     // programming
 	'.f90': 'FORTRAN',     // programming
-	'.f': 'FORTRAN',     // programming
+	'.f': 'FORTRAN|Forth',     // programming
 	'.f03': 'FORTRAN',     // programming
 	'.f08': 'FORTRAN',     // programming
 	'.f77': 'FORTRAN',     // programming
 	'.f95': 'FORTRAN',     // programming
-	'.for': 'FORTRAN',     // programming
+	'.for': 'FORTRAN|Formatted|Forth',     // programming
 	'.fpp': 'FORTRAN',     // programming
 	'.factor': 'Factor',     // programming
 	'.fy': 'Fancy',     // programming
@@ -215,7 +215,7 @@
 	'.fth': 'Forth',     // programming
 	'.4th': 'Forth',     // programming
 	'.forth': 'Forth',     // programming
-	'.fr': 'Forth',     // programming
+	'.fr': 'Forth|Frege',     // programming
 	'.frt': 'Forth',     // programming
 	'.ftl': 'FreeMarker',     // programming
 	'.g': 'G-code',     // data
@@ -227,7 +227,7 @@
 	'.gi': 'GAP',     // programming
 	'.tst': 'Scilab|GAP',     // programming
 	'.s': 'GAS',     // programming
-	'.ms': 'GAS',     // programming
+	'.ms': 'GAS|Groff|Maxscript',     // programming
 	'.glsl': 'GLSL',     // programming
 	'.fp': 'GLSL',     // programming
 	'.frag': 'GLSL',     // programming
@@ -430,7 +430,7 @@
 	'.rbxs': 'Lua',     // programming
 	'.wlua': 'Lua',     // programming
 	'.mumps': 'M',     // programming
-	'.m4': 'M4',     // programming
+	'.m4': 'M4|M4Sugar',     // programming
 	'.mcr': 'MAXScript',     // programming
 	'.mtml': 'MTML',     // markup
 	'.muf': 'MUF',     // programming
@@ -456,7 +456,7 @@
 	'.pat': 'Max',     // programming
 	'.mediawiki': 'MediaWiki',     // prose
 	'.wiki': 'MediaWiki',     // prose
-	'.moo': 'Mercury',     // programming
+	'.moo': 'Mercury|Moocode',     // programming
 	'.metal': 'Metal',     // programming
 	'.minid': 'MiniD',     // programming
 	'.druby': 'Mirah',     // programming
@@ -899,32 +899,13 @@
 
 module.exports = extensions;
 
-// ext .d already exists in dict for: D
-// failed to add: name DTrace type programming
-// ext .ecl already exists in dict for: ECL
-// failed to add: name ECLiPSe type programming
-// ext .fs already exists in dict for: F#
-// failed to add: name Filterscript type programming
-// ext .for already exists in dict for: FORTRAN
-// failed to add: name Formatted type data
-// ext .f already exists in dict for: FORTRAN
-// failed to add: name Forth type programming
-// ext .for already exists in dict for: FORTRAN
-// failed to add: name Forth type programming
-// ext .fs already exists in dict for: F#
-// failed to add: name Forth type programming
-// ext .fr already exists in dict for: Forth
-// failed to add: name Frege type programming
+
 // ext .g already exists in dict for: G-code
 // failed to add: name GAP type programming
 // ext .gd already exists in dict for: GAP
 // failed to add: name GDScript type programming
-// ext .fs already exists in dict for: F#
-// failed to add: name GLSL type programming
 // ext .gml already exists in dict for: Game Maker Language
 // failed to add: name Graph Modeling Language type data
-// ext .ms already exists in dict for: GAS
-// failed to add: name Groff type markup
 // ext .fx already exists in dict for: FLUX
 // failed to add: name HLSL type programming
 // ext .bf already exists in dict for: Brainfuck
@@ -941,17 +922,8 @@ module.exports = extensions;
 // failed to add: name KiCad type programming
 // ext .b already exists in dict for: Brainfuck
 // failed to add: name Limbo type programming
-// ext .mod already exists in dict for: AMPL
-// failed to add: name Linux Kernel Module type data
 // ext .ls already exists in dict for: LiveScript
 // failed to add: name LoomScript type programming
-// ext .m4 already exists in dict for: M4
-// failed to add: name M4Sugar type programming
-// ext .ms already exists in dict for: GAS
-// failed to add: name MAXScript type programming
+
 // ext .d already exists in dict for: D
 // failed to add: name Makefile type programming
-// ext .mod already exists in dict for: AMPL
-// failed to add: name Modula-2 type programming
-// ext .moo already exists in dict for: Mercury
-// failed to add: name Moocode type programming

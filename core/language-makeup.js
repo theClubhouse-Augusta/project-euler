@@ -5,7 +5,7 @@
 const c = require('ansi-colors');
 const fs = require('fs');
 const path = require('path');
-const extensions = require('./language-extensions');
+const extensions = require('./lang-extensions-dict');
 
 function computeEulersFolder() {
 	const folderPath = `${path.resolve(__dirname, '..')}/eulers`;
@@ -98,24 +98,30 @@ function getUnusedLanguages(){
 	let langsUsed = [];
 	let langsNotUsedDict = {};
 	const folderPath = `${path.resolve(__dirname, '..')}/eulers`;
-
-	const keyValueArray = Object.entries(extensions);
+	const extLangArray = Object.entries(extensions);
 	
 	try {
 		langsUsed = getFolderLanguages(folderPath, langsUsed);
+		langsNotUsedDict = extLangArray.filter(([key, value]) => !langsUsed.includes(key));
+		console.log(`Test - C#|Smalltalk should be in used array: ${c.greenBright(`${langsUsed.includes('C#|Smalltalk')}`)}`);
+		console.log(`Test - C# ext .cs should not be in unused dict: ${c.greenBright(`${langsNotUsedDict['.cs'] === undefined}`)}`);
+		console.log(`Test - JavaScript should be in used array: ${c.greenBright(`${langsUsed.includes('JavaScript')}`)}`);
+		console.log(`Test - JavaScript ext .js should not be in unused dict: ${c.greenBright(`${langsNotUsedDict['.js'] === undefined}`)}`);
+		// console.log('----LANGS USED----');
+		// console.log(langsUsed);
+		// console.log('----LANGS NOT USED DICT----');
+		// console.log(langsNotUsedDict);
 		
-		// langsNotUsedDict = extensions.filter(lang => !langsUsed.includes(lang));
-		langsNotUsedDict = keyValueArray.filter(([key, value]) => !langsUsed.includes(key));
-		console.log(`Test - C# should be in used array: ${langsUsed.includes('C#|Smalltalk')}`);
-		console.log(`Test - C# should not be in unused dict: ${langsNotUsedDict['.cs'] === undefined}`);
-		console.log(`Test - JavaScript should be in used array: ${langsUsed.includes('JavaScript')}`);
-		console.log(`Test - JavaScript should not be in unused dict: ${langsNotUsedDict['.js'] === undefined}`);
-		console.log('----LANGS USED----');
-		console.log(langsUsed);
-		console.log('----LANGS UNUSED DICT----');
-		console.log(langsNotUsedDict);
-		//todo write dict to file
+		const dictSavePath = `${path.resolve(__dirname, 'unused-langs-dict.js')}`;
+		const writeStream = fs.createWriteStream(dictSavePath);
+		writeStream.write('const unusedLangsDict = {' + '\n');
 		
+		for (let i = 0; i < langsNotUsedDict.length; ++i) {
+			const value = langsNotUsedDict[i].toString().split(',');
+			writeStream.write(`	'${value[0]}': '${value[1]}',` + '\n');
+		}
+		
+		writeStream.write('};\n\nmodule.exports = unusedLangsDict;');
 	} catch (err) {
 		console.error('Error:', err);
 	}
