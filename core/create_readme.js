@@ -1,7 +1,7 @@
 const problems = require('./problems');
 
-// simple function to create the README files and keep
-// index.js clean.
+// simple function to create the README files
+// and keep index.js clean.
 function create_readme(readme_type, readme_data) {
 	// user creates the top-level README.md file in 
 	// ./eulers/${problem}/${language}/${user}
@@ -78,25 +78,27 @@ ${markdown}
 		const submissions = readme_data.submissions;
 
 		let output = `# theClubhou.se Project Euler Collaboration Repository
-## Submissions Leaderboard
+\n## Submissions Leaderboard
 `;
 		const clean = process_submissions(submissions);
 
+		let cnt = 1
 		for ( const user in clean.leaderboard ) {
-			output += `1. @${user} **${clean.leaderboard[user]}** entries\n`;
+			output += `${cnt}. @${user} **${clean.leaderboard[user]}** entries\n`;
+			cnt++;
 		}
 
-		output += '\n# Popular Languages\n';
+		output += '\n## Popular Languages\n';
 
 		const languages = Object.keys(clean.languages)
 			.sort((a,b) => clean.languages[b].count - clean.languages[a].count);
 		for ( let i = 0; i < languages.length; ++i ) {
-			output += `1. **${languages[i]}** with **${clean.languages[languages[i]].count}** entries [leader: @${clean.languages[languages[i]].max_user} - ${clean.languages[languages[i]].max}]\n`;
+			output += `${i+1}. **${languages[i]}** with **${clean.languages[languages[i]].count}** entries [leader: @${clean.languages[languages[i]].max_user} - ${clean.languages[languages[i]].max}]\n`;
 		}
 		
 		return output;
 	
-	// euler_readme creates the top-level README.md file in eulers/ 
+	// euler_readme creates the top-level README.md file in eulers/
 	} else if ( readme_type === 'euler_readme' ) {
 		const submissions = readme_data.submissions;
 		let output = '# Welcome to theClubhou.se Project Euler Solutions Listing\n';
@@ -119,7 +121,6 @@ ${markdown}
 		}
 		return output;
 	}
-
 }
 
 function process_submissions(submissions) {

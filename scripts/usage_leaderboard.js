@@ -4,6 +4,7 @@ const c  = require('ansi-colors');
 // tool specific modules
 const create_readme = require('../core/create_readme');
 const setup = require('../core/setup');
+const path = require("path");
 
 // don't enter setup, just check to see if we have a username
 const { username, initialize_at_one } = setup(true); 
@@ -25,7 +26,7 @@ function write_leaderboard(username) {
 		languages : {},
 		users     : {},
 	};
-	const euler_path = __dirname.replace('/scripts','/');
+	const euler_path = path.resolve(__dirname, '..');
 	submissions.problems = fs
 		.readdirSync(`${euler_path}/eulers/`, {
 			withFileTypes: true,

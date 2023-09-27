@@ -41,7 +41,7 @@ The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
 - [ ] Truncatable Primes
 - [ ] Pandigital Multiples
 - [ ] Integer Right Triangles
-- [ ] Champernowne's Constant
+- [x] [Champernowne's Constant](./e40-champernowne's-constant/)
 - [ ] Pandigital Prime
 - [ ] Coded Triangle Numbers
 - [ ] Sub-string Divisibility
