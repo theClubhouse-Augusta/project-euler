@@ -292,7 +292,7 @@
 	'.grt': 'Groovy',     // programming
 	'.gtpl': 'Groovy',     // programming
 	'.gvy': 'Groovy',     // programming
-	'.gsp': 'Groovy Server Pages',     // programming
+	'.gsp': 'GroovyServerPages',     // programming
 	'.hcl': 'HCL',     // programming
 	'.tf': 'HCL',     // programming
 	'.hlsl': 'HLSL',     // programming

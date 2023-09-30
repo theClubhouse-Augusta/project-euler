@@ -1,24 +1,23 @@
 ﻿//get a list of 3 random unused langs
 //todo group by whether they're like possible to solve a euler in??
-
+const c = require('ansi-colors');
+const colors = require('colors');
 const dict = require('./unused-langs-dict');
 
 function getUnusedLangs() {
-	console.log("Here are 3 suggestions for languages not used yet:");
-	console.log("Your solution must be in a file with the file extension listed");
+	console.log('\nHere are 3 suggestions for languages not yet used to solve an euler!'.random);
+	console.log('Note: your solution must include a file with the file extension listed\n'.cyan);
 
-	for (let i = 0; i < 3; ++i) {
-		getLangs();
-	}
-}
-
-function getLangs() {
-	const langs = Object.values(dict);
-	const exts = Object.keys(dict);
-
+	const langs = Object.keys(dict).sort(() => Math.random() - 0.5);
 	if (langs.length === 0)
 		return null;
-
-	const rand = Math.floor(Math.random() * langs.length);
-	console.log(`${langs[rand]} language - file extension ${exts[rand]}`);
+	
+	for ( let i = 0; i < 3; ++i ) {
+		const ext = langs.pop(); // unique
+		console.log(`   ${dict[ext].green} language - file extension ${ext.green}`);
+	}
+	
+	console.log('\nDo your best and BE AMAZING!'.random);
 }
+
+getUnusedLangs();

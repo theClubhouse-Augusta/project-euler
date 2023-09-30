@@ -13,3 +13,6 @@ Find the sum of the digits in the number $100!$.
 ## Languages
 ### csharp
 - [AsteriHoku csharp's Solution](AsteriHoku), Author: [@AsteriHoku](https://github.com/AsteriHoku)
+### javascript
+- [AsteriHoku javascript's Solution](AsteriHoku), Author: [@AsteriHoku](https://github.com/AsteriHoku)
+- [blister javascript's Solution](blister), Author: [@blister](https://github.com/blister)
