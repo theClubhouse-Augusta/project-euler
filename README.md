@@ -59,14 +59,14 @@ and computational topics. As you progress through the problems, you'll have
 the opportunity to improve your problem-solving skills and programming 
 knowledge.
 
-## Problem Solutions
+## Euler Problem Solutions
 In this repository, you'll find solutions to Project Euler problems 
 implemented in different programming languages. Each problem is solved in its 
 own directory, organized by problem number. Inside each e directory are 
-subdirectories of the different languages that have been used to solve the 
+subdirectories of the languages that have been used to solve the 
 problems. You can explore and learn from various programming approaches used to 
-solve these problems. Feel welcome to reach out or discuss in theClubhou.se 
-discord server. See contact options in theClubhou.se about section.
+solve these problems. Feel welcome to reach out or discuss in theClubhou.se discord
+[#programming](https://discord.com/channels/1088482651742146750/1090640789287219241). See contact options in theClubhou.se about section.
 
 ## Getting Started (QuickStart)
 To get started with this repository, follow these steps:
@@ -135,6 +135,18 @@ repository.
 **Note**: If you are an **active** member of [theClubhouse-Augusta](https://theclubhou.se) and
 need to be added to the GH Organization, ask to be added in the Discord server at
 [#programming](https://discord.com/channels/1088482651742146750/1090640789287219241).
+
+## Contributions other than Euler problems
+This repository is meant to be focused on Euler problem solving and a wide range of programming
+languages. Other contributions will only be considered once there are tests in place to ensure
+persisting functionality for all existing features. If you are interested in assisting with that, reach out to
+[Repo Initiator](https://github.com/asterihoku) to discuss. *AFTER tests are in place:*
+
+If you have a different idea for a new feature or contribution, you can either:
+1. Create a separate branch for only this work
+2. Submit a PR to the main repository with:
+   * Details about your contribution
+   * Proof of tests passing
 
 ## Administrative
 If you ever need to "resync" our local list of problems with Project Euler,
