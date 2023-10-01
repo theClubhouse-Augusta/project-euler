@@ -98,17 +98,16 @@ git clone git@github.com:YOUR_USERNAME/project-euler.git
 npm install 
 ```
 
-### 4. Initial Setup 
+### 4. Initial Setup (only once)
 Now that you have everything installed, you can start solving immediately.
 The first time you run the Project Euler script, it will perform a setup
-function and ask you a few questions about your preferences. You will only
-need to do this once.
+function and ask you a few questions about your preferences.
 ```console
 npm run euler
 ```
 ![image](https://github.com/theClubhouse-Augusta/project-euler/assets/124588/7a06281b-69f2-424d-8945-138259145f8f)
 
-### 5. Code Your Solution
+### 5. Code Your Solution (for each problem)
 Start a new Project Euler solution by 1 of 2 options:
 
    * run the command `npm run euler` 
@@ -141,14 +140,14 @@ need to be added to the GH Organization, ask to be added in the Discord server a
 [#programming](https://discord.com/channels/1088482651742146750/1090640789287219241).
 
 ## Contributions other than Euler problems
-This repository is meant to be focused on Euler problem solving and a wide range of programming
-languages. Adding input on problems, solutions, and languages is welcome inside any readme file
-within the eulers directory. Anyone can contribute reviews to PRs.
+This repository is meant to be focused on Euler problem solving and a wide range of 
+programming languages. Adding input on problems, solutions, and languages is welcome 
+inside any readme file within the eulers directory. Anyone can contribute reviews to PRs.
 Discussions on theClubhou.se Discord server [#programming](https://discord.com/channels/1088482651742146750/1090640789287219241) are welcome.
 
 Other contributions will only be considered once there are tests in place to ensure
-persisting functionality for all existing features. If you are interested in assisting with that, reach out to
-[Repo Initiator](https://github.com/asterihoku) to discuss. *AFTER tests are in place:*
+persisting functionality for all existing features. If you are interested in assisting
+with that, reach out to [Repo Initiator](https://github.com/asterihoku) to discuss. *ONLY AFTER tests are in place:*
 
 If you have a different idea for a new feature or contribution:
 1. Create a separate branch just for this work
