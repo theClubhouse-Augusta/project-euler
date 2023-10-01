@@ -103,7 +103,6 @@ function getUnusedLanguages() {
 		// NOTE:
 		// NOTE:
 		// this should remain commented out until we want to update the dict file
-		// or when I turn it into a cron job or something :)
 
 		// const dictSavePath = `${path.resolve(__dirname, 'unused-langs-dict.js')}`;
 		// const writeStream = fs.createWriteStream(dictSavePath);
