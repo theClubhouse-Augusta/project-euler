@@ -3,6 +3,7 @@
 const c = require('ansi-colors');
 const colors = require('colors');
 const dict = require('./unused-langs-dict');
+const { rainbowifyString, binarifyString } = require('./asteri-rainbows');
 
 function getUnusedLangs() {
 	console.log('\nHere are 3 suggestions for languages not yet used to solve an euler!'.random);
@@ -17,7 +18,7 @@ function getUnusedLangs() {
 		console.log(`   ${dict[ext].green} language - file extension ${ext.green}`);
 	}
 	
-	console.log('\nDo your best and BE AMAZING!'.random);
+	console.log(`\n${'Do your best and BE AMAZING!'.random} ${rainbowifyString(binarifyString('HI MOM'))}`);
 }
 
 getUnusedLangs();
