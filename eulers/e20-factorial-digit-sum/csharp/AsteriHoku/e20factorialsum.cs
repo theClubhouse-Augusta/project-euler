@@ -1,12 +1,13 @@
 ﻿using System.Numerics;
-
-Console.WriteLine("Hi Mom!");
-// TODO: define your number here
 // see readme for more info about BigInteger long Int64
-BigInteger bigNum = 100;
+
+// TODO: define your number here (any code should function for a wide range of inputs)
+// thus this number should be able to be changed to any number or as many as possible without memory issues
+BigInteger bigNum = 100; //this number
 BigInteger factorial = GetFactorial(bigNum);
 int sumOfDigits = SumOfDigits(factorial);
-Console.WriteLine($"Sum of digits for {bigNum}! gives answer {sumOfDigits}");
+
+Console.WriteLine($"SOLUTION: Sum of digits for {bigNum}! gives answer {sumOfDigits}");
 
 static BigInteger GetFactorial(BigInteger n) {
     if (n == 0 || n == 1)
