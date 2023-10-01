@@ -101,24 +101,28 @@ npm install
 ### 4. Initial Setup 
 Now that you have everything installed, you can start solving immediately.
 The first time you run the Project Euler script, it will perform a setup
-function and ask you a few questions about your preferences.
+function and ask you a few questions about your preferences. You will only
+need to do this once.
 ```console
 npm run euler
 ```
 ![image](https://github.com/theClubhouse-Augusta/project-euler/assets/124588/7a06281b-69f2-424d-8945-138259145f8f)
 
 ### 5. Code Your Solution
-Start a new Project Euler solution by running the command `npm run euler` 
-or `node index.js`. This script will create all of the correct files and 
-folders, and will create a README file in your solution directory.
+Start a new Project Euler solution by 1 of 2 options:
 
-You can also provide command-line arguments to the script to skip 
-interactive mode and have the script perform the tasks automatically.
-#### Examples
-```console
-npm run euler 5 javascript
-node index.js 9 cpp
-```
+   * run the command `npm run euler` 
+or `node index.js`
+
+   * provide command-line arguments to the script to skip 
+interactive mode<br>Examples:
+`npm run euler 5 javascript`
+`node index.js 9 cpp`
+
+
+Either option will create all of the correct files and
+folders, and a README file in your solution directory. Keep your
+work inside your own solution directory.
 
 ### 6. Submit PR
 Once you're happy with your solution, submit a PR to the main repository
@@ -138,12 +142,16 @@ need to be added to the GH Organization, ask to be added in the Discord server a
 
 ## Contributions other than Euler problems
 This repository is meant to be focused on Euler problem solving and a wide range of programming
-languages. Other contributions will only be considered once there are tests in place to ensure
+languages. Adding input on problems, solutions, and languages is welcome inside any readme file
+within the eulers directory. Anyone can contribute reviews to PRs.
+Discussions on theClubhou.se Discord server [#programming](https://discord.com/channels/1088482651742146750/1090640789287219241) are welcome.
+
+Other contributions will only be considered once there are tests in place to ensure
 persisting functionality for all existing features. If you are interested in assisting with that, reach out to
 [Repo Initiator](https://github.com/asterihoku) to discuss. *AFTER tests are in place:*
 
-If you have a different idea for a new feature or contribution, you can either:
-1. Create a separate branch for only this work
+If you have a different idea for a new feature or contribution:
+1. Create a separate branch just for this work
 2. Submit a PR to the main repository with:
    * Details about your contribution
    * Proof of tests passing
