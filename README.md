@@ -135,7 +135,6 @@ repository.
 **Note**: If you are an **active** member of [theClubhouse-Augusta](https://theclubhou.se) and
 need to be added to the GH Organization, ask to be added in the Discord server at
 [#programming](https://discord.com/channels/1088482651742146750/1090640789287219241).
-for you and a `README.md` file for you to write about your solution.
 
 ## Administrative
 If you ever need to "resync" our local list of problems with Project Euler,

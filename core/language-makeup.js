@@ -36,7 +36,7 @@ function computeEulersFolder() {
 		}
 
 		console.log('-------------------------------------------------------------------------');
-		console.log(`To be challenged with a new language suggestion,\n    run: ${c.yellow.bold('cd core')} then run: ${c.yellow.bold('node unused-langs')}`);
+		console.log(`To be challenged with a new language suggestion...\n    run: ${c.yellow.bold('npm run new_lang')}`);
 
 	} catch (err) {
 		console.error(`Error in ${computeEulersFolder.name} in ${__dirname}:\n`, err);
