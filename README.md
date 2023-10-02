@@ -114,8 +114,9 @@ Start a new Project Euler solution by 1 of 2 options:
 or `node index.js`
 
    * provide command-line arguments to the script to skip 
-interactive mode<br>Examples:
-`npm run euler 5 javascript`
+interactive mode  
+Examples:
+`npm run euler 5 javascript` or 
 `node index.js 9 cpp`
 
 
