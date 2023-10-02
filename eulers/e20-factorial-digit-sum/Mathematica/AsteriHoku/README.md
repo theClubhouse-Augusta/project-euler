@@ -16,5 +16,8 @@ Find the sum of the digits in the number $100!$.
 
 ## Writeup from writer
 
-You can get Wolfram for free!!!
-[Wolfram for developers](https://www.wolfram.com/engine/)
+You can get Wolfram for free!!!<br>
+[Wolfram for developers](https://www.wolfram.com/developer/)<br>
+[Wolfram Engine](https://www.wolfram.com/engine/) free for developers<br>
+[Wolfgram Engine Technology](https://www.wolfram.com/engine-technology/)<br>
+[Fast Introduction](https://www.wolfram.com/language/fast-introduction-for-programmers/en/)
