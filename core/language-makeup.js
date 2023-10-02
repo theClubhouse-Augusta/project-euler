@@ -36,7 +36,7 @@ function computeEulersFolder() {
 		}
 
 		console.log('-------------------------------------------------------------------------');
-		console.log(`To be challenged with a new language suggestion,\n    run: ${c.yellow.bold('cd core')} then run: ${c.yellow.bold('node unused-langs')}`);
+		console.log(`To be challenged with a new language suggestion...\n    run: ${c.yellow.bold('npm run new_lang')}`);
 
 	} catch (err) {
 		console.error(`Error in ${computeEulersFolder.name} in ${__dirname}:\n`, err);
@@ -103,7 +103,6 @@ function getUnusedLanguages() {
 		// NOTE:
 		// NOTE:
 		// this should remain commented out until we want to update the dict file
-		// or when I turn it into a cron job or something :)
 
 		// const dictSavePath = `${path.resolve(__dirname, 'unused-langs-dict.js')}`;
 		// const writeStream = fs.createWriteStream(dictSavePath);
