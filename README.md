@@ -111,7 +111,7 @@ npm run euler
 Start a new Project Euler solution by 1 of 2 options:
 
    * run the command `npm run euler` or `node index.js`
-   * provide command-line arguments to the script to skip interactive mode
+   * provide command-line arguments to the script to skip interactive mode  
        Examples: `npm run euler 5 javascript` `node index.js 9 cpp`
 
 Either option will create all of the correct files and
