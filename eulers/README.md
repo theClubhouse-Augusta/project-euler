@@ -1,0 +1,858 @@
+# Welcome to theClubhou.se Project Euler Solutions Listing
+## Leaderboard
+The full project leaderboard is in [LEADERBOARD.md](LEADERBOARD.md).
+## Solutions
+- [ ] Multiples of $3$ or $5$
+- [ ] Even Fibonacci Numbers
+- [x] [Largest Prime Factor](./e3-largest-prime-factor/)
+- [ ] Largest Palindrome Product
+- [ ] Smallest Multiple
+- [ ] Sum Square Difference
+- [ ] $10001$st Prime
+- [ ] Largest Product in a Series
+- [ ] Special Pythagorean Triplet
+- [ ] Summation of Primes
+- [ ] Largest Product in a Grid
+- [x] [Highly Divisible Triangular Number](./e12-highly-divisible-triangular-number/)
+- [x] [Large Sum](./e13-large-sum/)
+- [x] [Longest Collatz Sequence](./e14-longest-collatz-sequence/)
+- [x] [Lattice Paths](./e15-lattice-paths/)
+- [x] [Power Digit Sum](./e16-power-digit-sum/)
+- [x] [Number Letter Counts](./e17-number-letter-counts/)
+- [ ] Maximum Path Sum I
+- [ ] Counting Sundays
+- [x] [Factorial Digit Sum](./e20-factorial-digit-sum/)
+- [x] [Amicable Numbers](./e21-amicable-numbers/)
+- [x] [Names Scores](./e22-names-scores/)
+- [ ] Non-Abundant Sums
+- [ ] Lexicographic Permutations
+- [ ] $1000$-digit Fibonacci Number
+- [ ] Reciprocal Cycles
+- [ ] Quadratic Primes
+- [ ] Number Spiral Diagonals
+- [ ] Distinct Powers
+- [ ] Digit Fifth Powers
+- [ ] Coin Sums
+- [ ] Pandigital Products
+- [ ] Digit Cancelling Fractions
+- [ ] Digit Factorials
+- [ ] Circular Primes
+- [ ] Double-base Palindromes
+- [ ] Truncatable Primes
+- [ ] Pandigital Multiples
+- [ ] Integer Right Triangles
+- [ ] Champernowne's Constant
+- [ ] Pandigital Prime
+- [ ] Coded Triangle Numbers
+- [ ] Sub-string Divisibility
+- [ ] Pentagon Numbers
+- [ ] Triangular, Pentagonal, and Hexagonal
+- [ ] Goldbach's Other Conjecture
+- [ ] Distinct Primes Factors
+- [ ] Self Powers
+- [ ] Prime Permutations
+- [ ] Consecutive Prime Sum
+- [ ] Prime Digit Replacements
+- [ ] Permuted Multiples
+- [ ] Combinatoric Selections
+- [ ] Poker Hands
+- [ ] Lychrel Numbers
+- [ ] Powerful Digit Sum
+- [ ] Square Root Convergents
+- [ ] Spiral Primes
+- [ ] XOR Decryption
+- [ ] Prime Pair Sets
+- [ ] Cyclical Figurate Numbers
+- [ ] Cubic Permutations
+- [ ] Powerful Digit Counts
+- [ ] Odd Period Square Roots
+- [ ] Convergents of $e$
+- [ ] Diophantine Equation
+- [ ] Maximum Path Sum II
+- [ ] Magic 5-gon Ring
+- [ ] Totient Maximum
+- [ ] Totient Permutation
+- [ ] Ordered Fractions
+- [ ] Counting Fractions
+- [ ] Counting Fractions in a Range
+- [ ] Digit Factorial Chains
+- [ ] Singular Integer Right Triangles
+- [ ] Counting Summations
+- [ ] Prime Summations
+- [ ] Coin Partitions
+- [ ] Passcode Derivation
+- [ ] Square Root Digital Expansion
+- [ ] Path Sum: Two Ways
+- [ ] Path Sum: Three Ways
+- [ ] Path Sum: Four Ways
+- [ ] Monopoly Odds
+- [ ] Counting Rectangles
+- [ ] Cuboid Route
+- [ ] Prime Power Triples
+- [ ] Product-sum Numbers
+- [ ] Roman Numerals
+- [ ] Cube Digit Pairs
+- [ ] Right Triangles with Integer Coordinates
+- [ ] Square Digit Chains
+- [ ] Arithmetic Expressions
+- [ ] Almost Equilateral Triangles
+- [ ] Amicable Chains
+- [ ] Su Doku
+- [ ] Large Non-Mersenne Prime
+- [ ] Anagramic Squares
+- [ ] Largest Exponential
+- [ ] Arranged Probability
+- [ ] Optimum Polynomial
+- [ ] Triangle Containment
+- [ ] Special Subset Sums: Optimum
+- [ ] Pandigital Fibonacci Ends
+- [ ] Special Subset Sums: Testing
+- [ ] Special Subset Sums: Meta-testing
+- [ ] Minimal Network
+- [ ] Diophantine Reciprocals I
+- [ ] Darts
+- [ ] Diophantine Reciprocals II
+- [ ] Primes with Runs
+- [ ] Bouncy Numbers
+- [ ] Non-bouncy Numbers
+- [ ] Counting Block Combinations I
+- [ ] Counting Block Combinations II
+- [ ] Red, Green or Blue Tiles
+- [ ] Red, Green, and Blue Tiles
+- [ ] Pandigital Prime Sets
+- [ ] Digit Power Sum
+- [ ] Square Remainders
+- [ ] Disc Game Prize Fund
+- [ ] Efficient Exponentiation
+- [ ] Prime Square Remainders
+- [ ] Ordered Radicals
+- [ ] Palindromic Sums
+- [ ] Cuboid Layers
+- [ ] abc-hits
+- [ ] Hexagonal Tile Differences
+- [ ] Repunit Divisibility
+- [ ] Composites with Prime Repunit Property
+- [ ] Prime Cube Partnership
+- [ ] Large Repunit Factors
+- [ ] Repunit Nonfactors
+- [ ] Prime Pair Connection
+- [ ] Same Differences
+- [ ] Singleton Difference
+- [ ] Fibonacci Golden Nuggets
+- [ ] Special Isosceles Triangles
+- [ ] Pythagorean Tiles
+- [ ] Modified Fibonacci Golden Nuggets
+- [ ] Square Progressive Numbers
+- [ ] Perfect Square Collection
+- [ ] Torricelli Triangles
+- [ ] Laser Beam Reflections 
+- [ ] Reversible Numbers
+- [ ] Investigating a Prime Pattern 
+- [ ] Rectangles in Cross-hatched Grids
+- [ ] Exploring Pascal's Triangle
+- [ ] Maximum-sum Subsequence
+- [ ] Sub-triangle Sums
+- [ ] A Preference for A5
+- [ ] Sums of Square Reciprocals
+- [ ] Investigating Gaussian Integers
+- [ ] Exploring Pascal's Pyramid
+- [ ] Counting Capacitor Circuits
+- [ ] Counting Digits
+- [ ] Base-10 Diophantine Reciprocal
+- [ ] Lexicographical Neighbours
+- [ ] Digital Root Sums of Factorisations
+- [ ] Factorial Trailing Digits
+- [ ] Triominoes
+- [ ] Hexadecimal Numbers
+- [ ] Cross-hatched Triangles
+- [ ] Three Consecutive Digital Sum Limit
+- [ ] Intersections
+- [ ] Criss Cross
+- [ ] Investigating Ulam Sequences
+- [ ] Number Rotations
+- [ ] Sums of Powers of Two
+- [ ] Pandigital Concatenating Products
+- [ ] Square Sum of the Digital Squares
+- [ ] Few Repeated Digits
+- [ ] Hollow Square Laminae I
+- [ ] Hollow Square Laminae II
+- [ ] Fractions and Sum of Powers of Two
+- [ ] Common Cathetus Right-angled Triangles
+- [ ] Integer Angled Quadrilaterals
+- [ ] Step Numbers
+- [ ] Consecutive Positive Divisors
+- [ ] Golden Triplets
+- [ ] Grouping Two Different Coloured Objects
+- [ ] RSA Encryption
+- [ ] Maximum Product of Parts
+- [ ] Triangles Containing the Origin
+- [ ] Number Mind
+- [ ] Connectedness of a Network
+- [ ] Semiprimes
+- [ ] Hyperexponentiation
+- [ ] Tri-colouring a Triangular Grid
+- [ ] Maximising a Weighted Product
+- [ ] Prize Strings
+- [ ] Best Approximations
+- [ ] Squarefree Numbers
+- [ ] Coloured Configurations
+- [ ] $60$-degree Triangle Inscribed Circles
+- [ ] Prime Triplets
+- [ ] A Recursively Defined Sequence
+- [ ] Ambiguous Numbers
+- [ ] Iterative Circle Packing
+- [ ] Prime-proof Squbes
+- [ ] Subsets with a Unique Sum
+- [ ] Laserbeam
+- [ ] Squarefree Binomial Coefficients
+- [ ] Generalised Hamming Numbers
+- [ ] Dice Game
+- [ ] Concealed Square
+- [ ] Integer Partition Equations
+- [ ] Robot Walks
+- [ ] Circular Logic
+- [ ] Obtuse Angled Triangles
+- [ ] Divisor Square Sum
+- [ ] Combined Volume of Cuboids
+- [ ] Flea Circus
+- [ ] Totient Chains
+- [ ] Crack-free Walls
+- [ ] The Primality of $2n^2 - 1$
+- [ ] Balanced Numbers
+- [ ] Perfect Right-angled Triangles
+- [ ] Skew-cost Coding
+- [ ] Heighway Dragon
+- [ ] Alexandrian Integers
+- [ ] Sphere Packing
+- [ ] Almost Right-angled Triangles I
+- [ ] Almost Right-angled Triangles II
+- [ ] Tribonacci Non-divisors
+- [ ] A Scoop of Blancmange
+- [ ] The Chase
+- [ ] Minkowski Sums
+- [ ] Four Representations Using Squares
+- [ ] Fibonacci Words
+- [ ] Prime Factorisation of Binomial Coefficients
+- [ ] The Race
+- [ ] Lattice Points on a Circle
+- [ ] Semidivisible Numbers
+- [ ] An Arithmetic Geometric Sequence
+- [ ] Luxury Hampers
+- [ ] Tours on a $4 \times N$ Playing Board
+- [ ] Infinite String Tour
+- [ ] Twenty-two Foolish Primes
+- [ ] Top Dice
+- [ ] Perfection Quotients
+- [ ] Odd Triplets
+- [ ] Resilience
+- [ ] Sliders
+- [ ] Coresilience
+- [ ] Tangents to an Ellipse
+- [ ] Squares Under a Hyperbola
+- [ ] Euler's Totient Function Equals 13!
+- [ ] Prime Subset Sums
+- [ ] $250250$
+- [ ] Cardano Triplets
+- [ ] Convex Holes
+- [ ] Tidying Up A
+- [ ] Sums of Digit Factorials
+- [ ] Rounded Square Roots
+- [ ] Tatami-Free Rooms
+- [ ] Angular Bisectors
+- [ ] A Lagged Fibonacci Sequence
+- [ ] Reachable Numbers
+- [ ] Stone Game
+- [ ] Pivotal Square Sums
+- [ ] Mountain Range
+- [ ] An Engineers' Dream Come True
+- [ ] Triangle Centres
+- [ ] Binary Circles
+- [ ] Pseudo Square Root
+- [ ] Billionaire
+- [ ] At Least Four Distinct Prime Factors Less Than 100
+- [ ] Polynomials with at Least One Integer Root
+- [ ] Cutting Squares
+- [ ] Modular Cubes, Part 1
+- [ ] Modular Cubes, Part 2
+- [ ] Sum of Squares
+- [ ] Divisibility Multipliers
+- [ ] Balanced Sculptures
+- [ ] Primitive Triangles
+- [ ] A Modified Collatz Sequence
+- [ ] Linear Combinations of Semiprimes
+- [ ] Triangles with Integral Sides and an Integral Angle 
+- [ ] Ant and Seeds
+- [ ] Pizza Toppings
+- [ ] The Ackermann Function
+- [ ] Integer Sided Triangles with Integral Area/perimeter Ratio
+- [ ] Steady Squares
+- [ ] Pythagorean Odds
+- [ ] Scoring Probabilities
+- [ ] Quadtree Encoding (a Simple Compression Algorithm)
+- [ ] An Enormous Factorial
+- [ ] Eulerian Cycles
+- [ ] Digital Signature
+- [ ] Panaitopol Primes
+- [ ] Pythagorean Polygons
+- [ ] Pseudo-Fortunate Numbers
+- [ ] Sum of Digits - Experience #23
+- [ ] Lenticular Holes
+- [ ] Angular Bisector and Tangent
+- [ ] Zeckendorf Representation
+- [ ] Selective Amnesia
+- [ ] Three Similar Triangles
+- [ ] Protein Folding
+- [ ] Nim
+- [ ] Strong Achilles Numbers
+- [ ] Multiples with Small Digits
+- [ ] Primonacci
+- [ ] Reflexive Position
+- [ ] Paper-strip Game
+- [ ] Chip Defects
+- [ ] An Amazing Prime-generating Automaton
+- [ ] Integer Ladders
+- [ ] Nim Square
+- [ ] Biclinic Integral Quadrilaterals
+- [ ] Cyclic Paths on Sierpiński Graphs
+- [ ] Sliding Game
+- [ ] The Mouse on the Moon
+- [ ] Digital Root Clocks
+- [ ] Numbers in Decimal Expansions
+- [ ] Firecracker
+- [ ] 2011 Nines
+- [ ] Bounded Sequences
+- [ ] Factorials Divisible by a Huge Integer
+- [ ] Swapping Counters
+- [ ] Binomial Coefficients Divisible by 10
+- [ ] Bitwise-OR Operations on Random Integers
+- [ ] Building a Tower
+- [ ] Stone Game II
+- [ ] Modulo Summations
+- [ ] Rooms of Doom
+- [ ] Lowest-cost Search
+- [ ] Prime Frog
+- [ ] Euler's Number
+- [ ] Cross Flips
+- [ ] Spherical Triangles
+- [ ] Special Partitions
+- [ ] Spilling the Beans
+- [ ] Gathering the Beans
+- [ ] Maximix Arrangements
+- [ ] Totient Stairstep Sequences
+- [ ] Cutting Rectangular Grid Paper
+- [ ] Peredur Fab Efrawg
+- [ ] Crazy Function
+- [ ] Golomb's Self-describing Sequence
+- [ ] The Totient of a Square Is a Cube
+- [ ] Fractional Sequences
+- [ ] Silver Dollar Game
+- [ ] Matrix Sum
+- [ ] Strong Repunits
+- [ ] Largest Integer Divisible by Two Primes
+- [ ] Sum of a Square and a Cube
+- [ ] Langton's Ant
+- [ ] Constraining the Least Greatest and the Greatest Least
+- [ ] Hexagonal Orchards
+- [ ] Blood Tests
+- [ ] Risky Moon
+- [ ] Distances in a Bee's Honeycomb 
+- [ ] Maximal Coprime Subset
+- [ ] Largest Roots of Cubic Polynomials
+- [ ] Prime Generating Integers
+- [ ] Cyclic Numbers
+- [ ] Hilbert's New Hotel
+- [ ] Scary Sphere
+- [ ] Subsequence of Thue-Morse Sequence
+- [ ] Squarefree Factors
+- [ ] Bézier Curves
+- [ ] Comfortable Distance
+- [ ] A Huge Binomial Coefficient
+- [ ] Stone Game III
+- [ ] Bozo Sort
+- [ ] A Kempner-like Series
+- [ ] Badugi
+- [ ] Geometric Triangles
+- [ ] Licence Plates
+- [ ] Pencils of Rays
+- [ ] Circumscribed Circles
+- [ ] Maximum Integer Partition Product
+- [ ] Minimum of Subsequences
+- [ ] Nontransitive Sets of Dice
+- [ ] Sum of Digits - Experience #13
+- [ ] Triangle Triples
+- [ ] Least Common Multiple Count
+- [ ] Amazing Mazes!
+- [ ] $(\text{prime}-k)$ Factorial
+- [ ] Generating Polygons
+- [ ] Divisibility Comparison Between Factorials
+- [ ] Rudin-Shapiro Sequence
+- [ ] Ellipses Inside Triangles
+- [ ] Maximum Length of an Antichain
+- [ ] Harshad Numbers
+- [ ] Distinct Lines
+- [ ] Platonic Dice
+- [ ] Triangles with Non Rational Sides and Integral Area
+- [ ] Hopping Game
+- [ ] Enmeshed Unit Circle
+- [ ] Migrating Ants
+- [ ] Eating Pie
+- [ ] Pythagorean Tree
+- [ ] Weak Goodstein Sequence
+- [ ] Triangle on Parabola
+- [ ] Cutting Rope
+- [ ] Squarefree Fibonacci Numbers
+- [ ] Fibonacci Tree Game
+- [ ] Sum of Squares of Divisors
+- [ ] Integer-valued Polynomials
+- [ ] Lattice Points Enclosed by Parabola and Line
+- [ ] Crisscross Ellipses
+- [ ] A Rectangular Tiling
+- [ ] Guessing Game
+- [ ] Idempotents
+- [ ] Admissible Paths Through a Grid
+- [ ] Nim Extreme
+- [ ] Circle and Tangent Line
+- [ ] Uphill Paths
+- [ ] Gnomon Numbering
+- [ ] One-child Numbers
+- [ ] Kaprekar Constant
+- [ ] Titanic Sets
+- [ ] A Frog's Trip
+- [ ] Reciprocal Cycles II
+- [ ] Factorisation Triples
+- [ ] Look and Say Sequence
+- [ ] $2 \times 2$ Positive Integer Matrix
+- [ ] Prime Factors of $n^{15}+1$
+- [ ] Sequence of Points on a Hyperbola
+- [ ] Consecutive Die Throws
+- [ ] Kakuro
+- [ ] Prime Connection
+- [ ] Box-Ball System
+- [ ] $n$-sequences
+- [ ] Necklace of Circles
+- [ ] Sum of Squares of Unitary Divisors
+- [ ] Range Flips
+- [ ] Square Space Silo
+- [ ] Totient Sum
+- [ ] Steps in Euclid's Algorithm
+- [ ] Rigid Graphs
+- [ ] Polynomials of Fibonacci Numbers
+- [ ] Unfair Wager
+- [ ] Fibonacci Primitive Roots
+- [ ] Integer Part of Polynomial Equation's Solutions
+- [ ] Sum of Sum of Divisors
+- [ ] GCD and Tiling
+- [ ] The Inverse Summation of Coprime Couples
+- [ ] Eleven-free Integers
+- [ ] GCD Sequence
+- [ ] The Roundtable Lottery
+- [ ] Retractions A
+- [ ] Retractions B
+- [ ] Retractions C
+- [ ] Average Least Common Multiple
+- [ ] Chocolate Covered Candy
+- [ ] Hypocycloid and Lattice Points
+- [ ] Modular Inverses
+- [ ] Long Products
+- [ ] Lattice Quadrilaterals
+- [ ] Diophantine Reciprocals III
+- [ ] Powers with Trailing Digits
+- [ ] Triangles Containing the Origin II
+- [ ] A Polynomial Modulo the Square of a Prime
+- [ ] Permutations of Project
+- [ ] Flipping Game
+- [ ] An Ant on the Move
+- [ ] Almost Pi
+- [ ] Permutation of 3-smooth Numbers
+- [ ] A Weird Recurrence Relation
+- [ ] Möbius Function and Intervals
+- [ ] Polar Polygons
+- [ ] Distinct Terms in a Multiplication Table
+- [ ] Superinteger
+- [ ] Smooth Divisors of Binomial Coefficients
+- [ ] Empty Chairs
+- [ ] Super Ramvok
+- [ ] Triangle Inscribed in Ellipse
+- [ ] Comfortable Distance II
+- [ ] Phigital Number Base
+- [ ] Last Digits of Divisors
+- [ ] Music Festival
+- [ ] Circle Packing II
+- [ ] Number Sequence Game
+- [ ] Mixtures
+- [ ] Roots on the Rise
+- [ ] The Last Question
+- [ ] Chef Showdown
+- [ ] The Incenter of a Triangle
+- [ ] Repeated Permutation
+- [ ] Arithmetic Derivative
+- [ ] Maximum Number of Divisors
+- [ ] Palindrome-containing Strings
+- [ ] Sums of Power Sums
+- [ ] Unbalanced Nim
+- [ ] Common Factors Between Two Sequences
+- [ ] Jumping Frog
+- [ ] Double Pandigital Number Divisible by $11$
+- [ ] Exploding Sequence
+- [ ] Under the Rainbow
+- [ ] Collatz Prefix Families
+- [ ] Writing $n$ as the Product of $k$ Distinct Positive Integers
+- [ ] Incenter and Circumcenter of Triangle
+- [ ] Drunken Tower of Hanoi
+- [ ] Remainder of Polynomial Division
+- [ ] St. Petersburg Lottery
+- [ ] Problem 500!!!
+- [ ] Eight Divisors
+- [ ] Counting Castles
+- [ ] Compromise or Persist
+- [ ] Square on the Inside
+- [ ] Bidirectional Recurrence
+- [ ] Clock Sequence
+- [ ] Shortest Lattice Vector
+- [ ] Integers in Base $i-1$
+- [ ] Divisor Nim
+- [ ] Tangent Circles
+- [ ] Sequences with Nice Divisibility Properties
+- [ ] Sums of Totients of Powers
+- [ ] Integral Median
+- [ ] Geoboard Shapes
+- [ ] Dissonant Numbers
+- [ ] $5$-smooth Totients
+- [ ] A Real Recursion
+- [ ] Prime Triples and Geometric Sequences
+- [ ] Tricoloured Coin Fountains
+- [ ] Simbers
+- [ ] Smallest Prime Factor
+- [ ] Hilbert's Blackout
+- [ ] First Sort I
+- [ ] First Sort II
+- [ ] Rolling Ellipse
+- [ ] Largest Prime Factors of Consecutive Numbers
+- [ ] Randomized Binary Search
+- [ ] Constrained Sums
+- [ ] $10$-substrings
+- [ ] GCD of Divisors
+- [ ] Chinese Leftovers
+- [ ] Nanobots on Geodesics
+- [ ] Minimum Values of the Carmichael Function
+- [ ] Weak Queens
+- [ ] Fractal Sequence
+- [ ] Modulo Power Identity 
+- [ ] Counting Tuples
+- [ ] Maximum Quadrilaterals
+- [ ] Odd Elimination
+- [ ] Counting Primitive Pythagorean Triples
+- [ ] Divisibility of Harmonic Number Denominators
+- [ ] Geometric Progression with Maximum Sum
+- [ ] Prime-Sum Numbers
+- [ ] Chromatic Conundrum
+- [ ] Faulhaber's Formulas
+- [ ] The Floor's Revenge
+- [ ] Distance of Random Points Within Hollow Square Laminae
+- [ ] Gozinta Chains
+- [ ] Divisibility of Factorials
+- [ ] Divisor Game
+- [ ] Sum of Digits Sequence
+- [ ] Chinese Leftovers II
+- [ ] Power Sets of Power Sets
+- [ ] Centaurs on a Chess Board
+- [ ] McCarthy 91 Function
+- [ ] Squarefree Gaussian Integers
+- [ ] Cutting Triangles
+- [ ] Irrational Base
+- [ ] Permuted Matrices
+- [ ] Coprime Nim
+- [ ] Divisor Pairs
+- [ ] Maximal Perimeter
+- [ ] Robot Welders
+- [ ] Maximal Polygons
+- [ ] Divisibility of Sum of Divisors
+- [ ] Cake Icing Puzzle
+- [ ] Reciprocal Games I
+- [ ] Reciprocal Games II
+- [ ] Prime Mountain Range
+- [ ] Snowflakes
+- [ ] Super Pandigital Numbers
+- [ ] Idempotent Matrices
+- [ ] Unfair Race
+- [ ] Verifying Primes
+- [ ] Wandering Robots
+- [ ] Irrational Jumps
+- [ ] Counting Hexagons
+- [ ] Integers with Decreasing Prime Powers
+- [ ] Lattice Points in Lattice Cubes
+- [ ] Squarefree Hilbert Numbers
+- [ ] $47$-smooth Triangular Numbers
+- [ ] Nearly Isosceles $120$ Degree Triangles
+- [ ] Heron Envelopes
+- [ ] Birthday Problem Revisited
+- [ ] Nested Square Roots
+- [ ] Binary Quadratic Form
+- [ ] Concave Triangle
+- [ ] Quintinomial Coefficients
+- [ ] Poohsticks Marathon
+- [ ] Sets with a Given Least Common Multiple
+- [ ] Best Approximations by Quadratic Integers
+- [ ] Factorial Trailing Digits 2
+- [ ] Fleeting Medians
+- [ ] Rhombus Tilings
+- [ ] Incremental Random Sort
+- [ ] Number of Lattice Points in a Hyperball
+- [ ] Torpids
+- [ ] Split Divisibilities
+- [ ] Distinct Colourings of a Rubik's Cube
+- [ ] Integer Sided Equiangular Hexagons
+- [ ] Divisibility Streaks
+- [ ] Product of Head Counts
+- [ ] Substring Sums of Prime Concatenations
+- [ ] Convex Path in Square
+- [ ] Pairwise Coin-Tossing Game
+- [ ] Gozinta Chains II
+- [ ] Marsh Crossing
+- [ ] Divisor Sums
+- [ ] $\pi$ Sequences
+- [ ] Roman Numerals II
+- [ ] Hallway of Square Steps
+- [ ] Friend Numbers
+- [ ] Pythagorean Ant
+- [ ] Special Partitions 2
+- [ ] The Millionth Number with at Least One Million Prime Factors
+- [ ] Creative Numbers
+- [ ] Mirror Power Sequence
+- [ ] Numbers with a Given Prime Factor Sum
+- [ ] Square Subsets
+- [ ] Planetary Gears
+- [ ] Expressing an Integer as the Sum of Triangular Numbers
+- [ ] Riffle Shuffles
+- [ ] Lambda Count
+- [ ] Two Heads Are Better Than One
+- [ ] Gcd Sum
+- [ ] Counting Binary Matrices
+- [ ] Counting Products
+- [ ] Open Chess Positions
+- [ ] Scatterstone Nim
+- [ ] Crossed Lines
+- [ ] Constrained Permutations
+- [ ] Square Prime Factors
+- [ ] Square Prime Factors II
+- [ ] Numbers of the Form $a^2b^3$
+- [ ] Subset Sums
+- [ ] Restricted Factorisations
+- [ ] Flexible Digit Sum
+- [ ] Weighted Lattice Paths
+- [ ] Summing a Multiplicative Function
+- [ ] Shut the Box
+- [ ] A Long Row of Dice
+- [ ] Sum of Largest Prime Factors
+- [ ] $2$-Friendly
+- [ ] Squares on the Line
+- [ ] Every Day Is a Holiday
+- [ ] Bounded Divisors
+- [ ] Linear Transformations of Polygonal Numbers
+- [ ] Skipping Squares
+- [ ] Low-Prime Chessboard Nim
+- [ ] Divisors of Binomial Product
+- [ ] Patterned Cylinders
+- [ ] Distinct Values of a Proto-logarithmic Function
+- [ ] Frictionless Tube
+- [ ] Neighbourly Constraints
+- [ ] Divisible Palindromes
+- [ ] Palindromic Sequences
+- [ ] Incomplete Words
+- [ ] Incomplete Words II
+- [ ] Largest Prime
+- [ ] Pandigital Triangles
+- [ ] A Long Chess Match
+- [ ] Fibonacci Paths
+- [ ] Sums of Subarrays
+- [ ] An Infinite Game
+- [ ] Proportionate Nim
+- [ ] Polymorphic Bacteria
+- [ ] Moving Pentagon
+- [ ] Square Root Smooth Numbers
+- [ ] The King's Banquet
+- [ ] Colouring a Strip
+- [ ] Colouring a Loop
+- [ ] One More One
+- [ ] Beds and Desks
+- [ ] Solving $\mathcal{I}$-equations
+- [ ] $2^{\omega(n)}$
+- [ ] Matching Digit Sums
+- [ ] Coloured Graphs
+- [ ] Fermat-like Equations
+- [ ] Freefarea
+- [ ] Yarra Gnisrever
+- [ ] Maximal Area
+- [ ] $5$-Smooth Pairs
+- [ ] The Chase II
+- [ ] Inverse Digit Sum
+- [ ] Inverse Digit Sum II
+- [ ] Powers of Two
+- [ ] Shuffling Cards
+- [ ] Piles of Plates
+- [ ] Binary Series
+- [ ] Tom and Jerry
+- [ ] Long Substring with Many Repetitions
+- [ ] Siegbert and Jo
+- [ ] Finite Sequence Generator
+- [ ] Cube-full Divisors
+- [ ] Random Rectangles
+- [ ] Mahjong
+- [ ] Randomly Decaying Sequence
+- [ ] 123 Numbers
+- [ ] Triffle Numbers
+- [ ] Eulercoin
+- [ ] Random Connected Area
+- [ ] Jumping Flea
+- [ ] Circular Logic II
+- [ ] Factors of Two in Binomial Coefficients
+- [ ] Total Inversion Count of Divided Sequences
+- [ ] $3$-Like Numbers
+- [ ] Lights Out
+- [ ] Twos Are All You Need
+- [ ] Even Stevens
+- [ ] One Million Members
+- [ ] Binary Blackboard
+- [ ] Exponent Difference
+- [ ] Turán's Water Heating System
+- [ ] Duodigits
+- [ ] Sextuplet Norms
+- [ ] Grid Graphs
+- [ ] Summation of a Modular Formula
+- [ ] Unreachable Numbers
+- [ ] Number Splitting
+- [ ] Unpredictable Permutations
+- [ ] High Powers of Irrational Numbers
+- [ ] Slowly Converging Series
+- [ ] Pythagorean Quadrilaterals
+- [ ] Drone Delivery
+- [ ] Digit Sum Numbers
+- [ ] Falling Bottles
+- [ ] Triangle of Circular Arcs
+- [ ] Circle of Coins
+- [ ] Range of Periodic Sequence
+- [ ] Shifted Pythagorean Triples
+- [ ] A Stoneham Number
+- [ ] Standing on the Shoulders of Trolls
+- [ ] Ascending Subsequences
+- [ ] A Bit of Prime
+- [ ] Divisors of $2n^2$
+- [ ] Paths to Equality
+- [ ] Coin Loops
+- [ ] Counting Ordered Factorisations
+- [ ] Summation of Summations
+- [ ] Secret Santa
+- [ ] Binary Grid Colouring
+- [ ] Minimum Area of a Convex Grid Polygon
+- [ ] Window into a Matrix
+- [ ] What? Where? When?
+- [ ] Sum of Squares II
+- [ ] A Messy Dinner
+- [ ] Triangular Pizza
+- [ ] Upside Down Diophantine Equation
+- [ ] Near Power Sums
+- [ ] Optimal Card Stacking
+- [ ] Concatenation Coincidence
+- [ ] Powers of $1+\sqrt 7$
+- [ ] Fermat Equation
+- [ ] Product of Gauss Factorials
+- [ ] Not Zeckendorf
+- [ ] Approximating a Sum
+- [ ] Stealthy Numbers
+- [ ] Buckets of Water
+- [ ] A Squared Recurrence Relation
+- [ ] Sum over Bitwise Operators
+- [ ] Runner and Swimmer
+- [ ] Amoebas in a 2D Grid
+- [ ] Amoebas in a 3D Grid
+- [ ] Asymmetric Diophantine Equation
+- [ ] Trillionaire
+- [ ] Sliding Block Puzzle
+- [ ] Window into a Matrix II
+- [ ] Chandelier
+- [ ] Binary Quadratic Form II
+- [ ] Delphi Flip
+- [ ] Pseudo Geometric Sequences
+- [ ] Balanceable $k$-bounded Partitions
+- [ ] Ruff Numbers
+- [ ] Conjunctive Sequences
+- [ ] Saving Paper
+- [ ] Digit Sum Division
+- [ ] Lissajous Curves
+- [ ] Freshman's Product
+- [ ] Prime Factor and Exponent
+- [ ] Toriangulations
+- [ ] Feynman Diagrams
+- [ ] Distinct Rows and Columns
+- [ ] Urns
+- [ ] Reciprocal Pairs
+- [ ] Symmetric Diophantine Equation
+- [ ] Billiard
+- [ ] Bézout's Game
+- [ ] Dominating Numbers
+- [ ] Minimal Pairing Modulo $p$
+- [ ] Clock Grid
+- [ ] Average and Variance
+- [ ] Too Many Twos
+- [ ] Median of Products
+- [ ] Seventeen Points
+- [ ] Alternating GCD Sum
+- [ ] A Grand Shuffle
+- [ ] Cyclogenic Polynomials
+- [ ] Card Stacking Game
+- [ ] Pentagonal Puzzle
+- [ ] Hybrid Integers
+- [ ] $x^y \equiv y^x$
+- [ ] Iterated Composition
+- [ ] Pseudorandom Sequence
+- [ ] Counting Binary Quadratic Representations
+- [ ] Shifted Multiples
+- [ ] Nim on Towers of Hanoi
+- [ ] Loops of Ropes
+- [ ] Reversible Prime Squares
+- [ ] Rational Recurrence Relation 
+- [ ] XOR-Primes
+- [ ] Bitwise Recursion
+- [ ] Dynamical Polynomials
+- [ ] XOR-Powers
+- [ ] Mezzo-forte
+- [ ] Group by Value
+- [ ] Shortest Distance Among Points
+- [ ] Digits in Squares
+- [ ] SET
+- [ ] Iterative Sampling
+- [ ] $N$<sup>th</sup> Digit of Reciprocals
+- [ ] 123-Separable
+- [ ] Square the Smallest
+- [ ] Factor Shuffle
+- [ ] Chess Sliders
+- [ ] Chasing Game
+- [ ] Birds on a Wire
+- [ ] Pythagorean Triple Occurrence
+- [ ] Numbers Challenge
+- [ ] Integral Fusion
+- [ ] Binomials and Powers
+- [ ] Triple Product
+- [ ] Mex Sequence
+- [ ] Square Triangle Products
+- [ ] Add and Divide
+- [ ] Supernatural Triangles
+- [ ] A Bold Proposition
+- [ ] Amidakuji
+- [ ] Not Coprime
+- [ ] Beans in Bowls
+- [ ] Sum of Products
+- [ ] Regular Star Polygons
+- [ ] Irregular Star Polygons
+- [ ] Periodic Circles
+- [ ] $k$-Markov Numbers
+- [ ] Prime Digit Sum
+- [ ] Magic Bracelets
+- [ ] Jack's Bean
+- [ ] Guessing with Sets
+- [ ] The Tournament
+- [ ] Fractions of Powers
+- [ ] SOP and POS
+- [ ] Coins in a Box
+- [ ] Pisano Periods 1
+- [ ] Pisano Periods 2
