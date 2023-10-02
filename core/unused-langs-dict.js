@@ -292,7 +292,7 @@ const unusedLangsDict = {
 	'.grt': 'Groovy',
 	'.gtpl': 'Groovy',
 	'.gvy': 'Groovy',
-	'.gsp': 'Groovy Server Pages',
+	'.gsp': 'GroovyServerPages',
 	'.hcl': 'HCL',
 	'.tf': 'HCL',
 	'.hlsl': 'HLSL',

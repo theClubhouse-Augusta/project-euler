@@ -27,14 +27,16 @@ function computeEulersFolder() {
 		metrics.sort((a, b) => b.fileCount - a.fileCount);
 
 		console.log(c.cyan(`!!!THERE HAVE BEEN ${c.yellow.bold(`${metrics[metrics.length - 1].eulerCount}`)} EULER PROBLEMS SOLVED IN ${c.yellow.bold(`${metrics.length - 1}`)} DIFFERENT LANGUAGES!!!`));
-		console.log(c.cyan(`  ??? CAN YOU COMPLETE A EULER IN A ${c.yellow.bold('NEW LANGUAGE')} ???`));
+		console.log(c.cyan(`  ??? CAN YOU COMPLETE AN EULER IN A ${c.yellow.bold('NEW LANGUAGE')} ???`));
 		console.log(c.blue("    Below:  # of files per language used to solve Euler problems,"));
 		console.log(c.blue("            + users who used that language + how many times they used it"));
-		console.log();
-
+		
 		for (let i = 0; i < metrics.length - 1; ++i) {
 			console.log(c.yellow(`${metrics[i].fileCount} ${c.cyan(`${metrics[i].lang} files -`)} ${c.blue(' users:')} ${c.green(`${metrics[i].users}`)}`));
 		}
+
+		console.log('-------------------------------------------------------------------------');
+		console.log(`To be challenged with a new language suggestion...\n    run: ${c.yellow.bold('npm run new_lang')}`);
 
 	} catch (err) {
 		console.error(`Error in ${computeEulersFolder.name} in ${__dirname}:\n`, err);
@@ -98,8 +100,10 @@ function getUnusedLanguages() {
 		console.log(`Test - JavaScript ext .js should not be in unused dict: ${c.greenBright(`${langsNotUsedDict['.js'] === undefined}`)}`);
 
 		// NOTE:
+		// NOTE:
+		// NOTE:
 		// this should remain commented out until we want to update the dict file
-		
+
 		// const dictSavePath = `${path.resolve(__dirname, 'unused-langs-dict.js')}`;
 		// const writeStream = fs.createWriteStream(dictSavePath);
 		// writeStream.write('const unusedLangsDict = {' + '\n');
