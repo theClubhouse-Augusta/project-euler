@@ -119,7 +119,6 @@ Examples:
 `npm run euler 5 javascript` or 
 `node index.js 9 cpp`
 
-
 Either option will create all of the correct files and
 folders, and a README file in your solution directory. Keep your
 work inside your own solution directory.
